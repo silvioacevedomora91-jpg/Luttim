@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parasitología - Guía Completa</title>
+  <style>
+    :root {
+      --primary: #1a6b3c;
+      --primary-light: #2d9b5a;
+      --secondary: #0d4f7c;
+      --accent: #e8821a;
+      --danger: #c0392b;
+      --bg: #f4f7f4;
+      --card-bg: #ffffff;
+      --text: #2c3e2d;
+      --text-muted: #5a7060;
+      --border: #d1e0d4;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, #0d2e18 0%, var(--primary) 60%, var(--secondary) 100%);
+      color: white;
+      padding: 3rem 1.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3Ccircle cx='30' cy='30' r='10'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    header .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      padding: 0.3rem 1rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    header h1 span {
+      color: #7fffb0;
+    }
+
+    header p.subtitle {
+      font-size: 1.15rem;
+      opacity: 0.85;
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .header-stats {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .header-stats .stat {
+      text-align: center;
+    }
+
+    .header-stats .stat strong {
+      display: block;
+      font-size: 1.6rem;
+      color: #7fffb0;
+      font-weight: 800;
+    }
+
+    .header-stats .stat span {
+      font-size: 0.8rem;
+      opacity: 0.75;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* NAV */
+    nav {
+      background: white;
+      border-bottom: 2px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    nav ul li a {
+      display: block;
+      padding: 1rem 1.2rem;
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.2s;
+      border-bottom: 3px solid transparent;
+    }
+
+    nav ul li a:hover {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+
+    /* MAIN */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* SECTION TITLES */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 3rem 0 1.5rem;
+    }
+
+    .section-header .icon {
+      width: 44px;
+      height: 44px;
+      background: var(--primary);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .section-header h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .section-header p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* CARDS */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* GRID LAYOUTS */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    /* INTRO BOX */
+    .intro-box {
+      background: linear-gradient(135deg, #e8f5ec, #d4edda);
+      border: 1px solid #b8dfc4;
+      border-left: 5px solid var(--primary);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .intro-box h2 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      font-size: 1.3rem;
+    }
+
+    /* PARASITE CATEGORY CARDS */
+    .category-card {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .category-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+
+    .category-card .card-header {
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: white;
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    .category-card .card-header .icon {
+      font-size: 1.5rem;
+    }
+
+    .protozoa .card-header { background: linear-gradient(135deg, #1a6b3c, #2d9b5a); }
+    .helminths .card-header { background: linear-gradient(135deg, #0d4f7c, #1a7ab5); }
+    .ectoparasites .card-header { background: linear-gradient(135deg, #7d3c00, #c0621a); }
+    .fungi-card .card-header { background: linear-gradient(135deg, #5a0d7a, #9b3dc8); }
+
+    .category-card .card-body {
+      padding: 1.2rem 1.5rem;
+    }
+
+    .category-card .card-body p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .category-card .examples {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 0.2rem 0.7rem;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .tag-green { background: #d4edda; color: #155724; }
+    .tag-blue  { background: #cce5ff; color: #004085; }
+    .tag-orange{ background: #ffe8cc; color: #7d3c00; }
+    .tag-purple{ background: #e8ccff; color: #4a0072; }
+
+    /* DISEASE TABLE */
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-bottom: 1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      font-size: 0.9rem;
+    }
+
+    table thead {
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: white;
+    }
+
+    table thead th {
+      padding: 0.9rem 1rem;
+      text-align: left;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    table tbody tr {
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+
+    table tbody tr:last-child { border-bottom: none; }
+    table tbody tr:hover { background: #f0f9f2; }
+
+    table tbody td {
+      padding: 0.8rem 1rem;
+      vertical-align: top;
+    }
+
+    .badge-danger { background: #f8d7da; color: #721c24; padding: 0.15rem 0.5rem; border-radius: 8px; font-size: 0.78rem; font-weight: 600; }
+    .badge-warn   { background: #fff3cd; color: #856404; padding: 0.15rem 0.5rem; border-radius: 8px; font-size: 0.78rem; font-weight: 600; }
+    .badge-ok     { background: #d4edda; color: #155724; padding: 0.15rem 0.5rem; border-radius: 8px; font-size: 0.78rem; font-weight: 600; }
+
+    /* LIFECYCLE */
+    .lifecycle {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      overflow-x: auto;
+      padding: 1rem 0;
+    }
+
+    .lifecycle-step {
+      flex: 1;
+      min-width: 130px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 0.75rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .lifecycle-step + .lifecycle-step {
+      margin-left: 2rem;
+    }
+
+    .lifecycle-step + .lifecycle-step::before {
+      content: '→';
+      position: absolute;
+      left: -1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--primary);
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    .lifecycle-step .step-num {
+      width: 28px;
+      height: 28px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin: 0 auto 0.5rem;
+    }
+
+    .lifecycle-step h4 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--secondary);
+      margin-bottom: 0.3rem;
+    }
+
+    .lifecycle-step p {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* PREVENTION */
+    .prevention-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .prevention-item {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.2rem;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .prevention-item:hover {
+      transform: translateY(-2px);
+    }
+
+    .prevention-item .icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .prevention-item h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.3rem;
+    }
+
+    .prevention-item p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* DIAGNOSIS */
+    .diag-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.2rem;
+      border-left: 4px solid var(--accent);
+    }
+
+    .diag-card h4 {
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .diag-card ul {
+      padding-left: 1.2rem;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    .diag-card ul li {
+      margin-bottom: 0.25rem;
+    }
+
+    /* ALERT BOX */
+    .alert {
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 1rem;
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+
+    .alert-danger {
+      background: #fdf0f0;
+      border: 1px solid #f5c6cb;
+      border-left: 4px solid var(--danger);
+      color: #721c24;
+    }
+
+    .alert-info {
+      background: #e8f4fd;
+      border: 1px solid #bee5eb;
+      border-left: 4px solid var(--secondary);
+      color: #0c5460;
+    }
+
+    .alert .alert-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .alert strong { display: block; font-size: 0.95rem; margin-bottom: 0.2rem; }
+    .alert p { font-size: 0.88rem; margin: 0; }
+
+    /* GLOSSARY */
+    .glossary-item {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .glossary-item dt {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 0.95rem;
+    }
+
+    .glossary-item dd {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      margin-left: 0;
+      margin-top: 0.2rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0d2e18;
+      color: rgba(255,255,255,0.8);
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.88rem;
+    }
+
+    footer strong { color: #7fffb0; }
+
+    /* SCROLLBAR */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #f0f0f0; }
+    ::-webkit-scrollbar-thumb { background: #9bc4a6; border-radius: 3px; }
+
+    @media (max-width: 600px) {
+      .header-stats { gap: 1rem; }
+      nav ul li a { padding: 0.75rem 0.6rem; font-size: 0.78rem; }
+      .lifecycle { flex-direction: column; }
+      .lifecycle-step + .lifecycle-step { margin-left: 0; margin-top: 2rem; }
+      .lifecycle-step + .lifecycle-step::before { content: '↓'; left: 50%; top: -1.5rem; transform: translateX(-50%); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="badge">Ciencias de la Salud</div>
+  <h1>Para<span>sitología</span></h1>
+  <p class="subtitle">Estudio científico de los parásitos, sus hospedadores y la relación entre ellos en el contexto de la salud humana y animal.</p>
+  <div class="header-stats">
+    <div class="stat"><strong>~300</strong><span>Especies parásitas humanas</span></div>
+    <div class="stat"><strong>3,200M</strong><span>Personas afectadas globalmente</span></div>
+    <div class="stat"><strong>4</strong><span>Grupos principales</span></div>
+    <div class="stat"><strong>1 de 4</strong><span>Personas con parásito activo</span></div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <ul>
+    <li><a href="#introduccion">Introducción</a></li>
+    <li><a href="#clasificacion">Clasificación</a></li>
+    <li><a href="#enfermedades">Enfermedades</a></li>
+    <li><a href="#ciclo">Ciclo de Vida</a></li>
+    <li><a href="#diagnostico">Diagnóstico</a></li>
+    <li><a href="#prevencion">Prevención</a></li>
+    <li><a href="#glosario">Glosario</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- INTRODUCCIÓN -->
+  <section id="introduccion">
+    <div class="section-header">
+      <div class="icon">🔬</div>
+      <div>
+        <h2>¿Qué es la Parasitología?</h2>
+        <p>Fundamentos y conceptos clave</p>
+      </div>
+    </div>
+
+    <div class="intro-box">
+      <h2>Definición</h2>
+      <p>La <strong>parasitología</strong> es la rama de la biología y la medicina que estudia los parásitos, organismos que viven a expensas de otro ser vivo (hospedador) del que obtienen nutrientes y refugio, causándole en general algún daño. Abarca la morfología, fisiología, epidemiología, patología y tratamiento de las parasitosis.</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>Parásito</h3>
+        <p>Organismo que vive sobre o dentro de otro (hospedador), obtiene beneficios a expensas de este y le causa daño. La relación es de <em>parasitismo</em>: el parásito se beneficia mientras el hospedador resulta perjudicado.</p>
+      </div>
+      <div class="card">
+        <h3>Hospedador</h3>
+        <p>Organismo que alberga al parásito. Puede ser <strong>definitivo</strong> (donde el parásito alcanza la madurez sexual) o <strong>intermediario</strong> (donde el parásito pasa fases larvarias o asexuadas).</p>
+      </div>
+      <div class="card">
+        <h3>Vector</h3>
+        <p>Organismo (generalmente artrópodo) que transmite el parásito de un hospedador a otro. Puede ser <strong>mecánico</strong> (simple transporte) o <strong>biológico</strong> (el parásito se desarrolla en el vector).</p>
+      </div>
+      <div class="card">
+        <h3>Zoonosis parasitaria</h3>
+        <p>Parasitosis que se transmite de animales vertebrados al ser humano. Ejemplos: toxoplasmosis, equinococosis, triquinosis. Representan un importante problema de salud pública global.</p>
+      </div>
+    </div>
+
+    <div class="alert alert-info">
+      <div class="alert-icon">ℹ️</div>
+      <div>
+        <strong>Importancia en salud pública</strong>
+        <p>Las enfermedades parasitarias son la principal causa de morbilidad en países tropicales y en desarrollo. La malaria, la helmintiasis y la enfermedad de Chagas se encuentran entre las enfermedades infecciosas más prevalentes del mundo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLASIFICACIÓN -->
+  <section id="clasificacion">
+    <div class="section-header">
+      <div class="icon">🧫</div>
+      <div>
+        <h2>Clasificación de los Parásitos</h2>
+        <p>Grupos principales según su naturaleza biológica</p>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="category-card protozoa">
+        <div class="card-header">
+          <span class="icon">🔵</span>
+          Protozoos
+        </div>
+        <div class="card-body">
+          <p>Organismos unicelulares eucariotas. Son los parásitos más simples morfológicamente pero pueden causar enfermedades muy graves. Se clasifican según su locomoción: flagelados, amebas, ciliados y esporozoos.</p>
+          <div class="examples">
+            <span class="tag tag-green">Plasmodium (malaria)</span>
+            <span class="tag tag-green">Trypanosoma</span>
+            <span class="tag tag-green">Leishmania</span>
+            <span class="tag tag-green">Giardia lamblia</span>
+            <span class="tag tag-green">Entamoeba histolytica</span>
+            <span class="tag tag-green">Toxoplasma gondii</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-card helminths">
+        <div class="card-header">
+          <span class="icon">🟤</span>
+          Helmintos (Gusanos)
+        </div>
+        <div class="card-body">
+          <p>Metazoos multicelulares de cuerpo blando. Se dividen en <strong>nematodos</strong> (redondos), <strong>tremátodos</strong> (planos con ventosas) y <strong>céstodos</strong> (platinos segmentados). Pueden alcanzar varios metros de longitud.</p>
+          <div class="examples">
+            <span class="tag tag-blue">Ascaris lumbricoides</span>
+            <span class="tag tag-blue">Taenia spp.</span>
+            <span class="tag tag-blue">Schistosoma</span>
+            <span class="tag tag-blue">Enterobius</span>
+            <span class="tag tag-blue">Trichinella</span>
+            <span class="tag tag-blue">Echinococcus</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-card ectoparasites">
+        <div class="card-header">
+          <span class="icon">🟠</span>
+          Ectoparásitos (Artrópodos)
+        </div>
+        <div class="card-body">
+          <p>Parásitos que viven sobre la superficie del hospedador. Incluye insectos (piojos, pulgas, moscas) y arácnidos (garrapatas, ácaros). Muchos actúan también como <em>vectores</em> de otras enfermedades.</p>
+          <div class="examples">
+            <span class="tag tag-orange">Pediculus humanus</span>
+            <span class="tag tag-orange">Sarcoptes scabiei</span>
+            <span class="tag tag-orange">Ixodes (garrapata)</span>
+            <span class="tag tag-orange">Ctenocephalides (pulga)</span>
+            <span class="tag tag-orange">Demodex folliculorum</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-card fungi-card">
+        <div class="card-header">
+          <span class="icon">🟣</span>
+          Parásitos intracelulares obligados
+        </div>
+        <div class="card-body">
+          <p>Microorganismos que sólo pueden reproducirse dentro de células del hospedador, a menudo situados en la frontera con los virus y bacterias. Su estudio se superpone con la microbiología médica.</p>
+          <div class="examples">
+            <span class="tag tag-purple">Cryptosporidium</span>
+            <span class="tag tag-purple">Microsporidium</span>
+            <span class="tag tag-purple">Pneumocystis jirovecii</span>
+            <span class="tag tag-purple">Babesia</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENFERMEDADES -->
+  <section id="enfermedades">
+    <div class="section-header">
+      <div class="icon">🏥</div>
+      <div>
+        <h2>Principales Enfermedades Parasitarias</h2>
+        <p>Distribución global, agentes causales y tratamientos</p>
+      </div>
+    </div>
+
+    <div class="alert alert-danger">
+      <div class="alert-icon">⚠️</div>
+      <div>
+        <strong>Enfermedades tropicales desatendidas (ETD)</strong>
+        <p>La OMS reconoce 20 ETD, la mayoría de origen parasitario. Afectan principalmente a poblaciones en pobreza. La filariasis linfática, oncocercosis, esquistosomiasis y helmintiasis intestinal son objetivos prioritarios de eliminación para 2030.</p>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Enfermedad</th>
+            <th>Agente causal</th>
+            <th>Transmisión</th>
+            <th>Distribución</th>
+            <th>Gravedad</th>
+            <th>Tratamiento</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Malaria (Paludismo)</strong></td>
+            <td>Plasmodium falciparum, P. vivax</td>
+            <td>Picadura de Anopheles</td>
+            <td>África, Asia, América Latina</td>
+            <td><span class="badge-danger">Alta</span></td>
+            <td>Artemisina + lumefantrina</td>
+          </tr>
+          <tr>
+            <td><strong>Enfermedad de Chagas</strong></td>
+            <td>Trypanosoma cruzi</td>
+            <td>Triatoma (vinchuca)</td>
+            <td>América Latina</td>
+            <td><span class="badge-danger">Alta</span></td>
+            <td>Benznidazol, Nifurtimox</td>
+          </tr>
+          <tr>
+            <td><strong>Leishmaniasis</strong></td>
+            <td>Leishmania spp.</td>
+            <td>Picadura de flebotomo</td>
+            <td>Trópicos y subtrópicos</td>
+            <td><span class="badge-danger">Alta</span></td>
+            <td>Anfotericina B liposomal</td>
+          </tr>
+          <tr>
+            <td><strong>Amebiasis</strong></td>
+            <td>Entamoeba histolytica</td>
+            <td>Fecal-oral, agua contaminada</td>
+            <td>Mundial (endémica en trópicos)</td>
+            <td><span class="badge-warn">Moderada</span></td>
+            <td>Metronidazol + Paramomicina</td>
+          </tr>
+          <tr>
+            <td><strong>Giardiasis</strong></td>
+            <td>Giardia lamblia</td>
+            <td>Agua y alimentos contaminados</td>
+            <td>Mundial</td>
+            <td><span class="badge-ok">Baja</span></td>
+            <td>Metronidazol, Tinidazol</td>
+          </tr>
+          <tr>
+            <td><strong>Toxoplasmosis</strong></td>
+            <td>Toxoplasma gondii</td>
+            <td>Carne cruda, heces de gato</td>
+            <td>Mundial</td>
+            <td><span class="badge-warn">Moderada*</span></td>
+            <td>Pirimetamina + Sulfadiazina</td>
+          </tr>
+          <tr>
+            <td><strong>Ascariasis</strong></td>
+            <td>Ascaris lumbricoides</td>
+            <td>Fecal-oral, suelo contaminado</td>
+            <td>Trópicos y subtrópicos</td>
+            <td><span class="badge-ok">Variable</span></td>
+            <td>Albendazol, Mebendazol</td>
+          </tr>
+          <tr>
+            <td><strong>Cisticercosis</strong></td>
+            <td>Taenia solium (larvas)</td>
+            <td>Ingestión de huevos</td>
+            <td>Latinoamérica, África, Asia</td>
+            <td><span class="badge-danger">Alta (SNC)</span></td>
+            <td>Albendazol + Praziquantel</td>
+          </tr>
+          <tr>
+            <td><strong>Esquistosomiasis</strong></td>
+            <td>Schistosoma spp.</td>
+            <td>Penetración dérmica (agua)</td>
+            <td>África, Asia, S. América</td>
+            <td><span class="badge-warn">Moderada-Alta</span></td>
+            <td>Praziquantel</td>
+          </tr>
+          <tr>
+            <td><strong>Tricomonosis</strong></td>
+            <td>Trichomonas vaginalis</td>
+            <td>Sexual</td>
+            <td>Mundial (ITS más prevalente)</td>
+            <td><span class="badge-ok">Baja</span></td>
+            <td>Metronidazol</td>
+          </tr>
+          <tr>
+            <td><strong>Oxiuriasis</strong></td>
+            <td>Enterobius vermicularis</td>
+            <td>Fecal-oral, autoinfección</td>
+            <td>Mundial (niños)</td>
+            <td><span class="badge-ok">Baja</span></td>
+            <td>Mebendazol, Pamoato de pirantel</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.8rem; color:var(--text-muted); margin-top:0.5rem;">* Alta gravedad en inmunosuprimidos, embarazadas y fetos.</p>
+  </section>
+
+  <!-- CICLO DE VIDA -->
+  <section id="ciclo">
+    <div class="section-header">
+      <div class="icon">🔄</div>
+      <div>
+        <h2>Ciclos de Vida Parasitarios</h2>
+        <p>Fases de desarrollo y transmisión</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Ciclo de vida del Plasmodium (Malaria)</h3>
+      <div class="lifecycle">
+        <div class="lifecycle-step">
+          <div class="step-num">1</div>
+          <h4>Picadura del mosquito</h4>
+          <p>Anopheles infectado inocula esporozoítos al humano</p>
+        </div>
+        <div class="lifecycle-step">
+          <div class="step-num">2</div>
+          <h4>Fase hepática</h4>
+          <p>Esporozoítos invaden hepatocitos y se reproducen (merozoítos)</p>
+        </div>
+        <div class="lifecycle-step">
+          <div class="step-num">3</div>
+          <h4>Fase eritrocítica</h4>
+          <p>Merozoítos invaden eritrocitos, se multiplican y los lisan (fiebre)</p>
+        </div>
+        <div class="lifecycle-step">
+          <div class="step-num">4</div>
+          <h4>Gametocitos</h4>
+          <p>Algunos merozoítos forman gametocitos que circulan en sangre</p>
+        </div>
+        <div class="lifecycle-step">
+          <div class="step-num">5</div>
+          <h4>Mosquito se infecta</h4>
+          <p>Nuevo Anopheles ingiere gametocitos; ciclo sexual en el mosquito</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top:1rem;">
+      <div class="card">
+        <h3>Ciclo directo (monoxeno)</h3>
+        <p>El parásito completa todo su ciclo en <strong>un solo hospedador</strong>. No necesita vector ni hospedador intermediario. Ejemplo: <em>Enterobius vermicularis</em> (oxiuros), que pasa de huevo ingerido → larva → adulto en el intestino del mismo humano.</p>
+      </div>
+      <div class="card">
+        <h3>Ciclo indirecto (heteroxeno)</h3>
+        <p>El parásito requiere <strong>dos o más hospedadores</strong> para completar su ciclo. Ejemplo: <em>Taenia solium</em> usa al cerdo como hospedador intermediario (cisticercos en músculo) y al humano como hospedador definitivo (adulto en intestino).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIAGNÓSTICO -->
+  <section id="diagnostico">
+    <div class="section-header">
+      <div class="icon">🧪</div>
+      <div>
+        <h2>Diagnóstico Parasitológico</h2>
+        <p>Métodos de identificación y confirmación</p>
+      </div>
+    </div>
+
+    <div class="grid-3">
+      <div class="diag-card">
+        <h4>Métodos directos</h4>
+        <ul>
+          <li>Examen coproparasitoscópico (ECP)</li>
+          <li>Frotis y gota gruesa en sangre</li>
+          <li>Método de Graham (oxiuros)</li>
+          <li>Biopsia de tejidos</li>
+          <li>Aspirado de médula ósea</li>
+          <li>Examen de líquido cefalorraquídeo</li>
+        </ul>
+      </div>
+      <div class="diag-card">
+        <h4>Métodos indirectos / serológicos</h4>
+        <ul>
+          <li>ELISA (Enzyme-Linked Immunosorbent Assay)</li>
+          <li>Inmunofluorescencia indirecta (IFI)</li>
+          <li>Hemaglutinación indirecta (HAI)</li>
+          <li>Western blot</li>
+          <li>Pruebas de aglutinación en látex</li>
+          <li>Prueba de Montenegro (leishmaniasis)</li>
+        </ul>
+      </div>
+      <div class="diag-card">
+        <h4>Biología molecular e imagen</h4>
+        <ul>
+          <li>PCR (Reacción en Cadena de Polimerasa)</li>
+          <li>PCR en tiempo real (qPCR)</li>
+          <li>LAMP (amplificación isotérmica)</li>
+          <li>Ultrasonido abdominal (hidatidosis)</li>
+          <li>TAC/RMN (neurocisticercosis)</li>
+          <li>Pruebas de diagnóstico rápido (TDR)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:1rem; border-left: 4px solid var(--primary);">
+      <h3>Técnicas de concentración parasitológica</h3>
+      <p>Para mejorar la sensibilidad en heces se utilizan métodos de concentración como <strong>Ritchie</strong> (formol-acetato de etilo), <strong>Baermann</strong> (larvas móviles), <strong>Willis</strong> (flotación con solución saturada de NaCl) y <strong>Kato-Katz</strong> (cuantificación de huevos de helmintos). La microscopía electrónica se reserva para casos complejos.</p>
+    </div>
+  </section>
+
+  <!-- PREVENCIÓN -->
+  <section id="prevencion">
+    <div class="section-header">
+      <div class="icon">🛡️</div>
+      <div>
+        <h2>Prevención y Control</h2>
+        <p>Estrategias individuales y de salud pública</p>
+      </div>
+    </div>
+
+    <div class="prevention-grid">
+      <div class="prevention-item">
+        <div class="icon">🚿</div>
+        <h4>Higiene personal</h4>
+        <p>Lavado frecuente de manos con agua y jabón, especialmente antes de comer y después del baño.</p>
+      </div>
+      <div class="prevention-item">
+        <div class="icon">💧</div>
+        <h4>Agua segura</h4>
+        <p>Consumir agua potable o hervida. Filtrar y clorar el agua en zonas sin saneamiento.</p>
+      </div>
+      <div class="prevention-item">
+        <div class="icon">🥩</div>
+        <h4>Cocción adecuada</h4>
+        <p>Cocinar bien carnes (70°C interno) para destruir quistes y larvas (Toxoplasma, Trichinella, Taenia).</p>
+      </div>
+      <div class="prevention-item">
+        <div class="icon">🦟</div>
+        <h4>Control de vectores</h4>
+        <p>Uso de mosquiteros impregnados, repelentes, fumigaciones y eliminación de criaderos de mosquitos.</p>
+      </div>
+      <div class="prevention-item">
+        <div class="icon">🐾</div>
+        <h4>Salud animal</h4>
+        <p>Desparasitar mascotas, controlar roedores y evitar contacto con heces de animales en áreas de juego.</p>
+      </div>
+      <div class="prevention-item">
+        <div class="icon">🏘️</div>
+        <h4>Saneamiento</h4>
+        <p>Mejora de letrinas, gestión de residuos sólidos y acceso a sistemas de agua y alcantarillado.</p>
+      </div>
+      <div class="prevention-item">
+        <div class="icon">💊</div>
+        <h4>Quimioprofilaxis</h4>
+        <p>Tratamiento preventivo masivo (TPM) en comunidades endémicas con albendazol o ivermectina.</p>
+      </div>
+      <div class="prevention-item">
+        <div class="icon">🌿</div>
+        <h4>Educación sanitaria</h4>
+        <p>Concientización comunitaria sobre modos de transmisión y medidas de higiene en escuelas y hogares.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GLOSARIO -->
+  <section id="glosario">
+    <div class="section-header">
+      <div class="icon">📖</div>
+      <div>
+        <h2>Glosario de Términos</h2>
+        <p>Conceptos fundamentales en parasitología</p>
+      </div>
+    </div>
+
+    <dl>
+      <div class="glossary-item">
+        <dt>Endoparásito</dt>
+        <dd>Parásito que vive dentro del cuerpo del hospedador (intestinos, tejidos, sangre).</dd>
+      </div>
+      <div class="glossary-item">
+        <dt>Ectoparásito</dt>
+        <dd>Parásito que vive sobre la superficie corporal del hospedador (piel, pelo, plumas).</dd>
+      </div>
+      <div class="glossary-item">
+        <dt>Quiste</dt>
+        <dd>Forma resistente de un parásito rodeada por una pared protectora; suele ser la forma infectante o de resistencia ambiental.</dd>
+      </div>
+      <div class="glossary-item">
+        <dt>Trofozoíto</dt>
+        <dd>Forma vegetativa activa de un protozoo; es la forma que se alimenta y se reproduce, generalmente no resistente al ambiente externo.</dd>
+      </div>
+      <div class="glossary-item">
+        <dt>Cercaría</dt>
+        <dd>Larva infectante de los tremátodos (como Schistosoma) que nada libremente en el agua y penetra activamente la piel del hospedador definitivo.</dd>
+      </div>
+      <div class="glossary-item">
+        <dt>Proglótido</dt>
+        <dd>Segmento del cuerpo de un céstodo (tenia) que contiene los órganos reproductores y puede desprenderse lleno de huevos.</dd>
+      </div>
+      <div class="glossary-item">
+        <dt>Microfilaría</dt>
+        <dd>Larva de primer estadio de los filáridos; circula en sangre o se aloja en piel y es tomada por el vector para continuar el ciclo.</dd>
+      </div>
+      <div class="glossary-item">
+        <dt>Ooquiste</dt>
+        <dd>Forma esporulada y resistente de los coccidios (Toxoplasma, Cryptosporidium, Cyclospora); es la forma de transmisión fecal-ambiental.</dd>
+      </div>
+      <div class="glossary-item">
+        <dt>Palúdico / Palúdea</dt>
+        <dd>Relativo al paludismo (malaria). Adjetivo que describe síntomas, pacientes o zonas endémicas de malaria.</dd>
+      </div>
+      <div class="glossary-item">
+        <dt>Helminto</dt>
+        <dd>Gusano parásito multicelular. Incluye nematodos (gusanos redondos), tremátodos (duelas) y céstodos (tenias).</dd>
+      </div>
+      <div class="glossary-item">
+        <dt>Amastigote</dt>
+        <dd>Forma intracelular y sin flagelo de Leishmania y Trypanosoma cruzi que se multiplica en los macrófagos del hospedador mamífero.</dd>
+      </div>
+      <div class="glossary-item">
+        <dt>Schizontes / Esquizogonia</dt>
+        <dd>Fase de reproducción asexual de Plasmodium en la que el parásito se divide múltiples veces dentro de una célula hospedera antes de liberarse.</dd>
+      </div>
+    </dl>
+  </section>
+
+</main>
+
+<footer>
+  <p><strong>Parasitología</strong> — Información educativa para estudiantes y profesionales de la salud.</p>
+  <p style="margin-top:0.5rem; opacity:0.6; font-size:0.8rem;">Contenido basado en referencias de la OMS, OPS y literatura médica actualizada. No reemplaza la consulta médica profesional.</p>
+</footer>
+
+</body>
+</html>
