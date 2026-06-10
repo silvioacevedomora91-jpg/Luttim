@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Atlas interactivo de Parasitología con modelos 3D de parásitos, ciclos de vida e información clínica profesional."
+    />
+    <title>ParasitoLab · Atlas Interactivo de Parasitología 3D</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦠</text></svg>"
+    />
+    <!-- Three.js alojado localmente (sin dependencia de CDN en tiempo de ejecución) -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "./vendor/three.module.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- ============ NAV ============ -->
+    <header class="nav">
+      <a class="brand" href="#top" data-scroll="top">
+        <span class="brand-mark">🦠</span>
+        <span class="brand-name">Parasito<b>Lab</b></span>
+      </a>
+      <nav class="nav-links">
+        <a href="#lab" data-scroll="lab">Laboratorio 3D</a>
+        <a href="#ciclo" data-scroll="ciclo">Ciclo de vida</a>
+        <a href="#atlas" data-scroll="atlas">Atlas</a>
+        <a href="#sobre" data-scroll="sobre">Acerca de</a>
+      </nav>
+      <a class="nav-cta" href="#lab" data-scroll="lab">Explorar ›</a>
+    </header>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <div class="hero-bg"></div>
+      <div class="hero-inner reveal">
+        <span class="pill">Atlas científico interactivo</span>
+        <h1>
+          El universo microscópico de los
+          <span class="grad">parásitos</span>, en 3D
+        </h1>
+        <p class="hero-sub">
+          Explora modelos tridimensionales interactivos, ciclos de vida y datos clínicos de los parásitos
+          de mayor relevancia médica. Gira, acerca y descubre cada estructura en tiempo real.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#lab" data-scroll="lab">Iniciar exploración</a>
+          <a class="btn btn-ghost" href="#atlas" data-scroll="atlas">Ver atlas completo</a>
+        </div>
+        <div class="stats reveal" id="stats"></div>
+      </div>
+      <div class="scroll-hint">↓ desliza para explorar</div>
+    </section>
+
+    <!-- ============ LABORATORIO 3D ============ -->
+    <section class="section lab" id="lab">
+      <div class="section-head reveal">
+        <span class="eyebrow">Laboratorio interactivo</span>
+        <h2>Visor 3D de parásitos</h2>
+        <p>Selecciona un organismo y manipúlalo libremente: arrastra para rotar, usa la rueda para hacer zoom.</p>
+      </div>
+
+      <div class="lab-grid">
+        <!-- Visor -->
+        <div class="viewer-stage reveal" id="viewer-stage">
+          <div class="viewer" id="viewer">
+            <div class="viewer-loading" id="viewer-loading"><span class="spinner"></span></div>
+          </div>
+          <div class="viewer-toolbar">
+            <button id="ctrl-rotate" class="vbtn on" title="Rotación automática">⟳</button>
+            <button id="ctrl-zoom-in" class="vbtn" title="Acercar">＋</button>
+            <button id="ctrl-zoom-out" class="vbtn" title="Alejar">－</button>
+            <button id="ctrl-reset" class="vbtn" title="Restablecer vista">⊙</button>
+            <button id="ctrl-wire" class="vbtn" title="Malla / wireframe">◫</button>
+            <button id="ctrl-full" class="vbtn" title="Pantalla completa">⛶</button>
+          </div>
+          <div class="viewer-hint">Arrastra · rueda para zoom · clic derecho para desplazar</div>
+        </div>
+
+        <!-- Información -->
+        <div class="info reveal">
+          <div class="selector" id="selector"></div>
+          <div class="info-card">
+            <div class="info-head" id="info-head"></div>
+            <div class="tabs" id="tabs"></div>
+            <div class="tab-body" id="tab-body"></div>
+            <div class="info-fact" id="info-fact"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CICLO DE VIDA ============ -->
+    <section class="section cycle-section" id="ciclo">
+      <div class="section-head reveal">
+        <span class="eyebrow">Ciclo biológico</span>
+        <h2>Ciclo de vida interactivo</h2>
+        <p>Recorre cada fase del desarrollo del parásito seleccionado. Haz clic en los nodos o en la lista.</p>
+      </div>
+      <div class="cycle-grid reveal">
+        <div class="cycle-ring" id="cycle-ring"></div>
+        <div class="cycle-list" id="lifecycle"></div>
+      </div>
+    </section>
+
+    <!-- ============ ATLAS ============ -->
+    <section class="section atlas" id="atlas">
+      <div class="section-head reveal">
+        <span class="eyebrow">Atlas parasitario</span>
+        <h2>Catálogo de organismos</h2>
+        <p>Una colección de los parásitos de mayor impacto en la salud humana.</p>
+      </div>
+      <div class="gallery" id="gallery"></div>
+    </section>
+
+    <!-- ============ SOBRE ============ -->
+    <section class="section about" id="sobre">
+      <div class="about-grid reveal">
+        <div>
+          <span class="eyebrow">Acerca del proyecto</span>
+          <h2>Ciencia rigurosa, experiencia inmersiva</h2>
+          <p>
+            <strong>ParasitoLab</strong> es un atlas educativo que combina visualización tridimensional en tiempo real
+            con información clínica estructurada. Cada modelo se genera de forma procedural para representar la
+            morfología característica del parásito —flagelos, escólex, pseudópodos o membranas ondulantes— de manera
+            dinámica e interactiva.
+          </p>
+          <ul class="about-list">
+            <li>🔬 Modelos 3D animados con WebGL (Three.js)</li>
+            <li>📚 Información clínica organizada por categorías</li>
+            <li>🔄 Ciclos de vida paso a paso</li>
+            <li>📱 Diseño responsivo para cualquier dispositivo</li>
+          </ul>
+        </div>
+        <div class="about-note">
+          <h3>Nota educativa</h3>
+          <p>
+            El contenido tiene fines exclusivamente didácticos y de divulgación científica. No sustituye el juicio
+            clínico ni el diagnóstico profesional. Las fuentes de referencia incluyen los CDC (DPDx), la OMS y manuales
+            de parasitología médica.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="brand">
+          <span class="brand-mark">🦠</span>
+          <span class="brand-name">Parasito<b>Lab</b></span>
+        </div>
+        <p>Atlas interactivo de parasitología · Construido con Three.js · Fines educativos</p>
+      </div>
+    </footer>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
