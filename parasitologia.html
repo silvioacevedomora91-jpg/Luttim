@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Parasitología - Guía Completa</title>
+  <title>Parasitología — Guía de Estudio Completa</title>
   <style>
     :root {
       --primary: #1a6b3c;
@@ -11,556 +11,208 @@
       --secondary: #0d4f7c;
       --accent: #e8821a;
       --danger: #c0392b;
+      --purple: #6d28d9;
       --bg: #f4f7f4;
       --card-bg: #ffffff;
       --text: #2c3e2d;
       --text-muted: #5a7060;
       --border: #d1e0d4;
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.75}
 
     /* HEADER */
-    header {
-      background: linear-gradient(135deg, #0d2e18 0%, var(--primary) 60%, var(--secondary) 100%);
-      color: white;
-      padding: 3rem 1.5rem 2rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    header::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3Ccircle cx='30' cy='30' r='10'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-      pointer-events: none;
-    }
-
-    header .badge {
-      display: inline-block;
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.3);
-      border-radius: 20px;
-      padding: 0.3rem 1rem;
-      font-size: 0.8rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
-
-    header h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.5rem;
-    }
-
-    header h1 span {
-      color: #7fffb0;
-    }
-
-    header p.subtitle {
-      font-size: 1.15rem;
-      opacity: 0.85;
-      max-width: 600px;
-      margin: 0 auto 1.5rem;
-    }
-
-    .header-stats {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-      margin-top: 1.5rem;
-    }
-
-    .header-stats .stat {
-      text-align: center;
-    }
-
-    .header-stats .stat strong {
-      display: block;
-      font-size: 1.6rem;
-      color: #7fffb0;
-      font-weight: 800;
-    }
-
-    .header-stats .stat span {
-      font-size: 0.8rem;
-      opacity: 0.75;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
+    header{background:linear-gradient(135deg,#0d2e18 0%,var(--primary) 55%,var(--secondary) 100%);color:#fff;padding:3rem 1.5rem 2.5rem;text-align:center;position:relative;overflow:hidden}
+    header::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3Ccircle cx='30' cy='30' r='8'/%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+    header .badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:.3rem 1rem;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem}
+    header h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;letter-spacing:-.02em;margin-bottom:.5rem}
+    header h1 span{color:#7fffb0}
+    header p.subtitle{font-size:1.1rem;opacity:.85;max-width:650px;margin:0 auto 1.5rem}
+    .header-stats{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-top:1.5rem}
+    .header-stats .stat{text-align:center}
+    .header-stats .stat strong{display:block;font-size:1.6rem;color:#7fffb0;font-weight:800}
+    .header-stats .stat span{font-size:.78rem;opacity:.75;text-transform:uppercase;letter-spacing:.08em}
 
     /* NAV */
-    nav {
-      background: white;
-      border-bottom: 2px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    }
+    nav{background:#fff;border-bottom:2px solid var(--border);position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+    nav ul{list-style:none;display:flex;justify-content:center;flex-wrap:wrap;max-width:1200px;margin:0 auto}
+    nav ul li a{display:block;padding:.85rem 1rem;text-decoration:none;color:var(--text-muted);font-size:.82rem;font-weight:600;transition:all .2s;border-bottom:3px solid transparent;white-space:nowrap}
+    nav ul li a:hover{color:var(--primary);border-bottom-color:var(--primary)}
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+    /* LAYOUT */
+    main{max-width:1150px;margin:0 auto;padding:2rem 1.5rem 5rem}
 
-    nav ul li a {
-      display: block;
-      padding: 1rem 1.2rem;
-      text-decoration: none;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      font-weight: 600;
-      transition: all 0.2s;
-      border-bottom: 3px solid transparent;
-    }
+    /* SECTION HEADER */
+    .section-header{display:flex;align-items:center;gap:.75rem;margin:3.5rem 0 1.5rem}
+    .section-header .icon{width:46px;height:46px;background:var(--primary);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
+    .section-header h2{font-size:1.7rem;font-weight:800;color:var(--primary)}
+    .section-header p{font-size:.88rem;color:var(--text-muted)}
 
-    nav ul li a:hover {
-      color: var(--primary);
-      border-bottom-color: var(--primary);
-    }
-
-    /* MAIN */
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem 4rem;
-    }
-
-    /* SECTION TITLES */
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin: 3rem 0 1.5rem;
-    }
-
-    .section-header .icon {
-      width: 44px;
-      height: 44px;
-      background: var(--primary);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      flex-shrink: 0;
-    }
-
-    .section-header h2 {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--primary);
-    }
-
-    .section-header p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
+    /* SUBSECTION */
+    .subsection{margin:2rem 0 1rem}
+    .subsection h3{font-size:1.15rem;font-weight:700;color:var(--secondary);border-left:4px solid var(--primary-light);padding-left:.75rem;margin-bottom:.75rem}
 
     /* CARDS */
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 1.5rem;
-      margin-bottom: 1rem;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-    }
+    .card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.4rem;margin-bottom:1rem;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+    .card h4{font-size:1rem;font-weight:700;color:var(--secondary);margin-bottom:.4rem}
+    .card p,.card li{color:var(--text-muted);font-size:.92rem}
+    .card ul{padding-left:1.2rem}
+    .card ul li{margin-bottom:.2rem}
 
-    .card h3 {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--secondary);
-      margin-bottom: 0.5rem;
-    }
-
-    .card p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-
-    /* GRID LAYOUTS */
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1rem;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-    }
+    /* GRIDS */
+    .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+    .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+    .grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
 
     /* INTRO BOX */
-    .intro-box {
-      background: linear-gradient(135deg, #e8f5ec, #d4edda);
-      border: 1px solid #b8dfc4;
-      border-left: 5px solid var(--primary);
-      border-radius: 12px;
-      padding: 1.5rem 2rem;
-      margin-bottom: 2rem;
-    }
+    .intro-box{background:linear-gradient(135deg,#e8f5ec,#d4edda);border:1px solid #b8dfc4;border-left:5px solid var(--primary);border-radius:12px;padding:1.4rem 1.8rem;margin-bottom:1.5rem}
+    .intro-box h3{color:var(--primary);margin-bottom:.4rem;font-size:1.1rem}
+    .intro-box p{font-size:.93rem;color:var(--text)}
 
-    .intro-box h2 {
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-      font-size: 1.3rem;
-    }
+    /* CATEGORY CARDS */
+    .cat-card{background:#fff;border-radius:14px;border:1px solid var(--border);overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.05);transition:transform .2s,box-shadow .2s}
+    .cat-card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.1)}
+    .cat-card .ch{padding:1rem 1.4rem;display:flex;align-items:center;gap:.75rem;color:#fff;font-weight:700;font-size:1rem}
+    .cat-card .ch .ico{font-size:1.5rem}
+    .cat-card .cb{padding:1.1rem 1.4rem}
+    .cat-card .cb p{color:var(--text-muted);font-size:.88rem;margin-bottom:.75rem}
+    .protozoa .ch{background:linear-gradient(135deg,#1a6b3c,#2d9b5a)}
+    .helminths .ch{background:linear-gradient(135deg,#0d4f7c,#1a7ab5)}
+    .ecto .ch{background:linear-gradient(135deg,#7d3c00,#c0621a)}
+    .intra .ch{background:linear-gradient(135deg,#5a0d7a,#9b3dc8)}
 
-    /* PARASITE CATEGORY CARDS */
-    .category-card {
-      background: white;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
+    /* TAGS */
+    .tags{display:flex;flex-wrap:wrap;gap:.35rem}
+    .tag{display:inline-block;padding:.18rem .65rem;border-radius:20px;font-size:.76rem;font-weight:600}
+    .tg{background:#d4edda;color:#155724}
+    .tb{background:#cce5ff;color:#004085}
+    .to{background:#ffe8cc;color:#7d3c00}
+    .tp{background:#e8ccff;color:#4a0072}
+    .tr{background:#f8d7da;color:#721c24}
+    .ty{background:#fff3cd;color:#856404}
 
-    .category-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    }
-
-    .category-card .card-header {
-      padding: 1rem 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      color: white;
-      font-weight: 700;
-      font-size: 1.05rem;
-    }
-
-    .category-card .card-header .icon {
-      font-size: 1.5rem;
-    }
-
-    .protozoa .card-header { background: linear-gradient(135deg, #1a6b3c, #2d9b5a); }
-    .helminths .card-header { background: linear-gradient(135deg, #0d4f7c, #1a7ab5); }
-    .ectoparasites .card-header { background: linear-gradient(135deg, #7d3c00, #c0621a); }
-    .fungi-card .card-header { background: linear-gradient(135deg, #5a0d7a, #9b3dc8); }
-
-    .category-card .card-body {
-      padding: 1.2rem 1.5rem;
-    }
-
-    .category-card .card-body p {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .category-card .examples {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
-
-    .tag {
-      display: inline-block;
-      padding: 0.2rem 0.7rem;
-      border-radius: 20px;
-      font-size: 0.78rem;
-      font-weight: 600;
-    }
-
-    .tag-green { background: #d4edda; color: #155724; }
-    .tag-blue  { background: #cce5ff; color: #004085; }
-    .tag-orange{ background: #ffe8cc; color: #7d3c00; }
-    .tag-purple{ background: #e8ccff; color: #4a0072; }
-
-    /* DISEASE TABLE */
-    .table-wrap {
-      overflow-x: auto;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      margin-bottom: 1rem;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: white;
-      font-size: 0.9rem;
-    }
-
-    table thead {
-      background: linear-gradient(135deg, var(--primary), var(--primary-light));
-      color: white;
-    }
-
-    table thead th {
-      padding: 0.9rem 1rem;
-      text-align: left;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-
-    table tbody tr {
-      border-bottom: 1px solid var(--border);
-      transition: background 0.15s;
-    }
-
-    table tbody tr:last-child { border-bottom: none; }
-    table tbody tr:hover { background: #f0f9f2; }
-
-    table tbody td {
-      padding: 0.8rem 1rem;
-      vertical-align: top;
-    }
-
-    .badge-danger { background: #f8d7da; color: #721c24; padding: 0.15rem 0.5rem; border-radius: 8px; font-size: 0.78rem; font-weight: 600; }
-    .badge-warn   { background: #fff3cd; color: #856404; padding: 0.15rem 0.5rem; border-radius: 8px; font-size: 0.78rem; font-weight: 600; }
-    .badge-ok     { background: #d4edda; color: #155724; padding: 0.15rem 0.5rem; border-radius: 8px; font-size: 0.78rem; font-weight: 600; }
+    /* TABLES */
+    .tw{overflow-x:auto;border-radius:12px;border:1px solid var(--border);margin-bottom:1rem}
+    table{width:100%;border-collapse:collapse;background:#fff;font-size:.88rem}
+    thead{background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff}
+    thead th{padding:.85rem 1rem;text-align:left;font-weight:600;white-space:nowrap}
+    tbody tr{border-bottom:1px solid var(--border);transition:background .15s}
+    tbody tr:last-child{border-bottom:none}
+    tbody tr:hover{background:#f0f9f2}
+    tbody td{padding:.75rem 1rem;vertical-align:top}
+    .bd{background:#f8d7da;color:#721c24;padding:.15rem .5rem;border-radius:8px;font-size:.76rem;font-weight:600}
+    .bw{background:#fff3cd;color:#856404;padding:.15rem .5rem;border-radius:8px;font-size:.76rem;font-weight:600}
+    .bg{background:#d4edda;color:#155724;padding:.15rem .5rem;border-radius:8px;font-size:.76rem;font-weight:600}
 
     /* LIFECYCLE */
-    .lifecycle {
-      display: flex;
-      align-items: stretch;
-      gap: 0;
-      overflow-x: auto;
-      padding: 1rem 0;
-    }
+    .lifecycle{display:flex;align-items:stretch;gap:0;overflow-x:auto;padding:1rem 0}
+    .ls{flex:1;min-width:130px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:1rem .75rem;text-align:center;position:relative}
+    .ls+.ls{margin-left:2rem}
+    .ls+.ls::before{content:'→';position:absolute;left:-1.5rem;top:50%;transform:translateY(-50%);color:var(--primary);font-size:1.3rem;font-weight:700}
+    .ls .sn{width:28px;height:28px;background:var(--primary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700;margin:0 auto .5rem}
+    .ls h4{font-size:.82rem;font-weight:700;color:var(--secondary);margin-bottom:.25rem}
+    .ls p{font-size:.76rem;color:var(--text-muted)}
 
-    .lifecycle-step {
-      flex: 1;
-      min-width: 130px;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1rem 0.75rem;
-      text-align: center;
-      position: relative;
-    }
-
-    .lifecycle-step + .lifecycle-step {
-      margin-left: 2rem;
-    }
-
-    .lifecycle-step + .lifecycle-step::before {
-      content: '→';
-      position: absolute;
-      left: -1.5rem;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--primary);
-      font-size: 1.3rem;
-      font-weight: bold;
-    }
-
-    .lifecycle-step .step-num {
-      width: 28px;
-      height: 28px;
-      background: var(--primary);
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.85rem;
-      font-weight: 700;
-      margin: 0 auto 0.5rem;
-    }
-
-    .lifecycle-step h4 {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--secondary);
-      margin-bottom: 0.3rem;
-    }
-
-    .lifecycle-step p {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
+    /* ALERTS */
+    .alert{border-radius:12px;padding:1rem 1.4rem;margin-bottom:1rem;display:flex;gap:.75rem;align-items:flex-start}
+    .alert-d{background:#fdf0f0;border:1px solid #f5c6cb;border-left:4px solid var(--danger);color:#721c24}
+    .alert-i{background:#e8f4fd;border:1px solid #bee5eb;border-left:4px solid var(--secondary);color:#0c5460}
+    .alert-w{background:#fffbeb;border:1px solid #fde68a;border-left:4px solid #d97706;color:#78350f}
+    .alert-g{background:#ecfdf5;border:1px solid #a7f3d0;border-left:4px solid var(--primary);color:#065f46}
+    .alert .ai{font-size:1.3rem;flex-shrink:0;margin-top:.1rem}
+    .alert strong{display:block;font-size:.93rem;margin-bottom:.2rem}
+    .alert p{font-size:.86rem;margin:0}
 
     /* PREVENTION */
-    .prevention-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-    }
+    .prev-item{background:#fff;border:1px solid var(--border);border-radius:12px;padding:1.2rem;text-align:center;transition:transform .2s}
+    .prev-item:hover{transform:translateY(-2px)}
+    .prev-item .ico{font-size:2rem;margin-bottom:.5rem}
+    .prev-item h4{font-size:.92rem;font-weight:700;color:var(--primary);margin-bottom:.3rem}
+    .prev-item p{font-size:.8rem;color:var(--text-muted)}
 
-    .prevention-item {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.2rem;
-      text-align: center;
-      transition: transform 0.2s;
-    }
+    /* DIAG CARD */
+    .dc{background:#fff;border:1px solid var(--border);border-radius:12px;padding:1.2rem;border-left:4px solid var(--accent)}
+    .dc h4{font-weight:700;color:var(--accent);margin-bottom:.5rem;font-size:.9rem;text-transform:uppercase;letter-spacing:.05em}
+    .dc ul{padding-left:1.2rem;color:var(--text-muted);font-size:.86rem}
+    .dc ul li{margin-bottom:.25rem}
 
-    .prevention-item:hover {
-      transform: translateY(-2px);
-    }
+    /* STUDY BOX */
+    .study-box{background:linear-gradient(135deg,#fffbeb,#fef3c7);border:1px solid #fde68a;border-left:5px solid #d97706;border-radius:12px;padding:1.3rem 1.6rem;margin-bottom:1rem}
+    .study-box h4{color:#92400e;font-size:.95rem;font-weight:700;margin-bottom:.5rem}
+    .study-box ul{padding-left:1.2rem;color:#78350f;font-size:.88rem}
+    .study-box ul li{margin-bottom:.3rem}
 
-    .prevention-item .icon {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .prevention-item h4 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 0.3rem;
-    }
-
-    .prevention-item p {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-    }
-
-    /* DIAGNOSIS */
-    .diag-card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.2rem;
-      border-left: 4px solid var(--accent);
-    }
-
-    .diag-card h4 {
-      font-weight: 700;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .diag-card ul {
-      padding-left: 1.2rem;
-      color: var(--text-muted);
-      font-size: 0.88rem;
-    }
-
-    .diag-card ul li {
-      margin-bottom: 0.25rem;
-    }
-
-    /* ALERT BOX */
-    .alert {
-      border-radius: 12px;
-      padding: 1rem 1.5rem;
-      margin-bottom: 1rem;
-      display: flex;
-      gap: 0.75rem;
-      align-items: flex-start;
-    }
-
-    .alert-danger {
-      background: #fdf0f0;
-      border: 1px solid #f5c6cb;
-      border-left: 4px solid var(--danger);
-      color: #721c24;
-    }
-
-    .alert-info {
-      background: #e8f4fd;
-      border: 1px solid #bee5eb;
-      border-left: 4px solid var(--secondary);
-      color: #0c5460;
-    }
-
-    .alert .alert-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 0.1rem; }
-    .alert strong { display: block; font-size: 0.95rem; margin-bottom: 0.2rem; }
-    .alert p { font-size: 0.88rem; margin: 0; }
+    /* PHARMA TABLE */
+    .pharma-card{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:.75rem}
+    .pharma-card .ph{background:linear-gradient(135deg,var(--secondary),#2563eb);color:#fff;padding:.75rem 1.2rem;font-weight:700;font-size:.95rem;display:flex;align-items:center;gap:.5rem}
+    .pharma-card .pb{padding:1rem 1.2rem}
+    .pharma-card .pb p{font-size:.87rem;color:var(--text-muted);margin-bottom:.5rem}
+    .pharma-card .pb .meta{display:flex;flex-wrap:wrap;gap:.4rem}
 
     /* GLOSSARY */
-    .glossary-item {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1rem 1.2rem;
-      margin-bottom: 0.5rem;
-    }
+    .gi{background:#fff;border:1px solid var(--border);border-radius:10px;padding:1rem 1.2rem;margin-bottom:.5rem}
+    .gi dt{font-weight:700;color:var(--primary);font-size:.93rem}
+    .gi dd{color:var(--text-muted);font-size:.86rem;margin-left:0;margin-top:.2rem}
 
-    .glossary-item dt {
-      font-weight: 700;
-      color: var(--primary);
-      font-size: 0.95rem;
-    }
+    /* CLINICAL BOX */
+    .clinical{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:1rem}
+    .clinical .cl-head{background:linear-gradient(135deg,#7f1d1d,var(--danger));color:#fff;padding:.9rem 1.3rem;font-weight:700;font-size:1rem}
+    .clinical .cl-body{padding:1.2rem 1.3rem}
+    .clinical .cl-body p{font-size:.9rem;color:var(--text-muted);margin-bottom:.6rem}
+    .clinical .cl-body .row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+    .clinical .cl-body .col h5{font-size:.82rem;font-weight:700;color:var(--danger);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.35rem}
+    .clinical .cl-body .col ul{padding-left:1rem;font-size:.84rem;color:var(--text-muted)}
+    .clinical .cl-body .col ul li{margin-bottom:.2rem}
 
-    .glossary-item dd {
-      color: var(--text-muted);
-      font-size: 0.88rem;
-      margin-left: 0;
-      margin-top: 0.2rem;
-    }
+    /* COMPARE TABLE */
+    .cmp-table table thead{background:linear-gradient(135deg,var(--purple),#7c3aed)}
 
-    /* FOOTER */
-    footer {
-      background: #0d2e18;
-      color: rgba(255,255,255,0.8);
-      text-align: center;
-      padding: 2rem 1.5rem;
-      font-size: 0.88rem;
-    }
+    /* PROGRESS / TIMELINE */
+    .timeline{border-left:3px solid var(--primary);margin-left:1rem;padding-left:1.5rem}
+    .tl-item{position:relative;margin-bottom:1.5rem}
+    .tl-item::before{content:'';width:14px;height:14px;background:var(--primary);border-radius:50%;position:absolute;left:-2.15rem;top:.25rem;border:2px solid #fff;box-shadow:0 0 0 2px var(--primary)}
+    .tl-item h4{font-size:.95rem;font-weight:700;color:var(--primary);margin-bottom:.25rem}
+    .tl-item p{font-size:.87rem;color:var(--text-muted)}
 
-    footer strong { color: #7fffb0; }
+    footer{background:#0d2e18;color:rgba(255,255,255,.8);text-align:center;padding:2rem 1.5rem;font-size:.86rem}
+    footer strong{color:#7fffb0}
 
-    /* SCROLLBAR */
-    ::-webkit-scrollbar { width: 6px; height: 6px; }
-    ::-webkit-scrollbar-track { background: #f0f0f0; }
-    ::-webkit-scrollbar-thumb { background: #9bc4a6; border-radius: 3px; }
-
-    @media (max-width: 600px) {
-      .header-stats { gap: 1rem; }
-      nav ul li a { padding: 0.75rem 0.6rem; font-size: 0.78rem; }
-      .lifecycle { flex-direction: column; }
-      .lifecycle-step + .lifecycle-step { margin-left: 0; margin-top: 2rem; }
-      .lifecycle-step + .lifecycle-step::before { content: '↓'; left: 50%; top: -1.5rem; transform: translateX(-50%); }
+    @media(max-width:640px){
+      .header-stats{gap:1rem}
+      nav ul li a{padding:.65rem .5rem;font-size:.75rem}
+      .lifecycle{flex-direction:column}
+      .ls+.ls{margin-left:0;margin-top:2rem}
+      .ls+.ls::before{content:'↓';left:50%;top:-1.5rem;transform:translateX(-50%)}
+      .clinical .cl-body .row{grid-template-columns:1fr}
     }
   </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
-  <div class="badge">Ciencias de la Salud</div>
+  <div class="badge">Ciencias de la Salud · Guía de Estudio</div>
   <h1>Para<span>sitología</span></h1>
-  <p class="subtitle">Estudio científico de los parásitos, sus hospedadores y la relación entre ellos en el contexto de la salud humana y animal.</p>
+  <p class="subtitle">Guía completa para estudiantes de medicina y ciencias de la salud. Cubre taxonomía, patogenia, clínica, diagnóstico, tratamiento y epidemiología.</p>
   <div class="header-stats">
     <div class="stat"><strong>~300</strong><span>Especies parásitas humanas</span></div>
-    <div class="stat"><strong>3,200M</strong><span>Personas afectadas globalmente</span></div>
-    <div class="stat"><strong>4</strong><span>Grupos principales</span></div>
-    <div class="stat"><strong>1 de 4</strong><span>Personas con parásito activo</span></div>
+    <div class="stat"><strong>3,200M</strong><span>Personas afectadas</span></div>
+    <div class="stat"><strong>1M+</strong><span>Muertes/año por malaria</span></div>
+    <div class="stat"><strong>12</strong><span>Secciones de estudio</span></div>
   </div>
 </header>
 
-<!-- NAV -->
 <nav>
   <ul>
-    <li><a href="#introduccion">Introducción</a></li>
+    <li><a href="#intro">Introducción</a></li>
     <li><a href="#clasificacion">Clasificación</a></li>
+    <li><a href="#protozoos">Protozoos</a></li>
+    <li><a href="#helmintos">Helmintos</a></li>
+    <li><a href="#ecto">Ectoparásitos</a></li>
     <li><a href="#enfermedades">Enfermedades</a></li>
-    <li><a href="#ciclo">Ciclo de Vida</a></li>
+    <li><a href="#ciclos">Ciclos de Vida</a></li>
+    <li><a href="#inmuno">Inmunología</a></li>
     <li><a href="#diagnostico">Diagnóstico</a></li>
+    <li><a href="#farma">Fármacos</a></li>
     <li><a href="#prevencion">Prevención</a></li>
     <li><a href="#glosario">Glosario</a></li>
   </ul>
@@ -568,482 +220,873 @@
 
 <main>
 
-  <!-- INTRODUCCIÓN -->
-  <section id="introduccion">
-    <div class="section-header">
-      <div class="icon">🔬</div>
-      <div>
-        <h2>¿Qué es la Parasitología?</h2>
-        <p>Fundamentos y conceptos clave</p>
-      </div>
-    </div>
+<!-- ═══════════════════ 1. INTRODUCCIÓN ═══════════════════ -->
+<section id="intro">
+  <div class="section-header">
+    <div class="icon">🔬</div>
+    <div><h2>Introducción a la Parasitología</h2><p>Conceptos, definiciones y relaciones ecológicas</p></div>
+  </div>
 
-    <div class="intro-box">
-      <h2>Definición</h2>
-      <p>La <strong>parasitología</strong> es la rama de la biología y la medicina que estudia los parásitos, organismos que viven a expensas de otro ser vivo (hospedador) del que obtienen nutrientes y refugio, causándole en general algún daño. Abarca la morfología, fisiología, epidemiología, patología y tratamiento de las parasitosis.</p>
-    </div>
+  <div class="intro-box">
+    <h3>Definición</h3>
+    <p>La <strong>parasitología</strong> es la rama de la biología y la medicina que estudia los parásitos: organismos que viven a expensas de otro ser vivo (hospedador), obteniendo nutrientes y refugio mientras le causan daño. Integra morfología, fisiología, ecología, epidemiología, patología clínica y terapéutica.</p>
+  </div>
 
-    <div class="grid-2">
-      <div class="card">
-        <h3>Parásito</h3>
-        <p>Organismo que vive sobre o dentro de otro (hospedador), obtiene beneficios a expensas de este y le causa daño. La relación es de <em>parasitismo</em>: el parásito se beneficia mientras el hospedador resulta perjudicado.</p>
-      </div>
-      <div class="card">
-        <h3>Hospedador</h3>
-        <p>Organismo que alberga al parásito. Puede ser <strong>definitivo</strong> (donde el parásito alcanza la madurez sexual) o <strong>intermediario</strong> (donde el parásito pasa fases larvarias o asexuadas).</p>
-      </div>
-      <div class="card">
-        <h3>Vector</h3>
-        <p>Organismo (generalmente artrópodo) que transmite el parásito de un hospedador a otro. Puede ser <strong>mecánico</strong> (simple transporte) o <strong>biológico</strong> (el parásito se desarrolla en el vector).</p>
-      </div>
-      <div class="card">
-        <h3>Zoonosis parasitaria</h3>
-        <p>Parasitosis que se transmite de animales vertebrados al ser humano. Ejemplos: toxoplasmosis, equinococosis, triquinosis. Representan un importante problema de salud pública global.</p>
-      </div>
-    </div>
-
-    <div class="alert alert-info">
-      <div class="alert-icon">ℹ️</div>
-      <div>
-        <strong>Importancia en salud pública</strong>
-        <p>Las enfermedades parasitarias son la principal causa de morbilidad en países tropicales y en desarrollo. La malaria, la helmintiasis y la enfermedad de Chagas se encuentran entre las enfermedades infecciosas más prevalentes del mundo.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CLASIFICACIÓN -->
-  <section id="clasificacion">
-    <div class="section-header">
-      <div class="icon">🧫</div>
-      <div>
-        <h2>Clasificación de los Parásitos</h2>
-        <p>Grupos principales según su naturaleza biológica</p>
-      </div>
-    </div>
-
-    <div class="grid-2">
-      <div class="category-card protozoa">
-        <div class="card-header">
-          <span class="icon">🔵</span>
-          Protozoos
-        </div>
-        <div class="card-body">
-          <p>Organismos unicelulares eucariotas. Son los parásitos más simples morfológicamente pero pueden causar enfermedades muy graves. Se clasifican según su locomoción: flagelados, amebas, ciliados y esporozoos.</p>
-          <div class="examples">
-            <span class="tag tag-green">Plasmodium (malaria)</span>
-            <span class="tag tag-green">Trypanosoma</span>
-            <span class="tag tag-green">Leishmania</span>
-            <span class="tag tag-green">Giardia lamblia</span>
-            <span class="tag tag-green">Entamoeba histolytica</span>
-            <span class="tag tag-green">Toxoplasma gondii</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="category-card helminths">
-        <div class="card-header">
-          <span class="icon">🟤</span>
-          Helmintos (Gusanos)
-        </div>
-        <div class="card-body">
-          <p>Metazoos multicelulares de cuerpo blando. Se dividen en <strong>nematodos</strong> (redondos), <strong>tremátodos</strong> (planos con ventosas) y <strong>céstodos</strong> (platinos segmentados). Pueden alcanzar varios metros de longitud.</p>
-          <div class="examples">
-            <span class="tag tag-blue">Ascaris lumbricoides</span>
-            <span class="tag tag-blue">Taenia spp.</span>
-            <span class="tag tag-blue">Schistosoma</span>
-            <span class="tag tag-blue">Enterobius</span>
-            <span class="tag tag-blue">Trichinella</span>
-            <span class="tag tag-blue">Echinococcus</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="category-card ectoparasites">
-        <div class="card-header">
-          <span class="icon">🟠</span>
-          Ectoparásitos (Artrópodos)
-        </div>
-        <div class="card-body">
-          <p>Parásitos que viven sobre la superficie del hospedador. Incluye insectos (piojos, pulgas, moscas) y arácnidos (garrapatas, ácaros). Muchos actúan también como <em>vectores</em> de otras enfermedades.</p>
-          <div class="examples">
-            <span class="tag tag-orange">Pediculus humanus</span>
-            <span class="tag tag-orange">Sarcoptes scabiei</span>
-            <span class="tag tag-orange">Ixodes (garrapata)</span>
-            <span class="tag tag-orange">Ctenocephalides (pulga)</span>
-            <span class="tag tag-orange">Demodex folliculorum</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="category-card fungi-card">
-        <div class="card-header">
-          <span class="icon">🟣</span>
-          Parásitos intracelulares obligados
-        </div>
-        <div class="card-body">
-          <p>Microorganismos que sólo pueden reproducirse dentro de células del hospedador, a menudo situados en la frontera con los virus y bacterias. Su estudio se superpone con la microbiología médica.</p>
-          <div class="examples">
-            <span class="tag tag-purple">Cryptosporidium</span>
-            <span class="tag tag-purple">Microsporidium</span>
-            <span class="tag tag-purple">Pneumocystis jirovecii</span>
-            <span class="tag tag-purple">Babesia</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ENFERMEDADES -->
-  <section id="enfermedades">
-    <div class="section-header">
-      <div class="icon">🏥</div>
-      <div>
-        <h2>Principales Enfermedades Parasitarias</h2>
-        <p>Distribución global, agentes causales y tratamientos</p>
-      </div>
-    </div>
-
-    <div class="alert alert-danger">
-      <div class="alert-icon">⚠️</div>
-      <div>
-        <strong>Enfermedades tropicales desatendidas (ETD)</strong>
-        <p>La OMS reconoce 20 ETD, la mayoría de origen parasitario. Afectan principalmente a poblaciones en pobreza. La filariasis linfática, oncocercosis, esquistosomiasis y helmintiasis intestinal son objetivos prioritarios de eliminación para 2030.</p>
-      </div>
-    </div>
-
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Enfermedad</th>
-            <th>Agente causal</th>
-            <th>Transmisión</th>
-            <th>Distribución</th>
-            <th>Gravedad</th>
-            <th>Tratamiento</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Malaria (Paludismo)</strong></td>
-            <td>Plasmodium falciparum, P. vivax</td>
-            <td>Picadura de Anopheles</td>
-            <td>África, Asia, América Latina</td>
-            <td><span class="badge-danger">Alta</span></td>
-            <td>Artemisina + lumefantrina</td>
-          </tr>
-          <tr>
-            <td><strong>Enfermedad de Chagas</strong></td>
-            <td>Trypanosoma cruzi</td>
-            <td>Triatoma (vinchuca)</td>
-            <td>América Latina</td>
-            <td><span class="badge-danger">Alta</span></td>
-            <td>Benznidazol, Nifurtimox</td>
-          </tr>
-          <tr>
-            <td><strong>Leishmaniasis</strong></td>
-            <td>Leishmania spp.</td>
-            <td>Picadura de flebotomo</td>
-            <td>Trópicos y subtrópicos</td>
-            <td><span class="badge-danger">Alta</span></td>
-            <td>Anfotericina B liposomal</td>
-          </tr>
-          <tr>
-            <td><strong>Amebiasis</strong></td>
-            <td>Entamoeba histolytica</td>
-            <td>Fecal-oral, agua contaminada</td>
-            <td>Mundial (endémica en trópicos)</td>
-            <td><span class="badge-warn">Moderada</span></td>
-            <td>Metronidazol + Paramomicina</td>
-          </tr>
-          <tr>
-            <td><strong>Giardiasis</strong></td>
-            <td>Giardia lamblia</td>
-            <td>Agua y alimentos contaminados</td>
-            <td>Mundial</td>
-            <td><span class="badge-ok">Baja</span></td>
-            <td>Metronidazol, Tinidazol</td>
-          </tr>
-          <tr>
-            <td><strong>Toxoplasmosis</strong></td>
-            <td>Toxoplasma gondii</td>
-            <td>Carne cruda, heces de gato</td>
-            <td>Mundial</td>
-            <td><span class="badge-warn">Moderada*</span></td>
-            <td>Pirimetamina + Sulfadiazina</td>
-          </tr>
-          <tr>
-            <td><strong>Ascariasis</strong></td>
-            <td>Ascaris lumbricoides</td>
-            <td>Fecal-oral, suelo contaminado</td>
-            <td>Trópicos y subtrópicos</td>
-            <td><span class="badge-ok">Variable</span></td>
-            <td>Albendazol, Mebendazol</td>
-          </tr>
-          <tr>
-            <td><strong>Cisticercosis</strong></td>
-            <td>Taenia solium (larvas)</td>
-            <td>Ingestión de huevos</td>
-            <td>Latinoamérica, África, Asia</td>
-            <td><span class="badge-danger">Alta (SNC)</span></td>
-            <td>Albendazol + Praziquantel</td>
-          </tr>
-          <tr>
-            <td><strong>Esquistosomiasis</strong></td>
-            <td>Schistosoma spp.</td>
-            <td>Penetración dérmica (agua)</td>
-            <td>África, Asia, S. América</td>
-            <td><span class="badge-warn">Moderada-Alta</span></td>
-            <td>Praziquantel</td>
-          </tr>
-          <tr>
-            <td><strong>Tricomonosis</strong></td>
-            <td>Trichomonas vaginalis</td>
-            <td>Sexual</td>
-            <td>Mundial (ITS más prevalente)</td>
-            <td><span class="badge-ok">Baja</span></td>
-            <td>Metronidazol</td>
-          </tr>
-          <tr>
-            <td><strong>Oxiuriasis</strong></td>
-            <td>Enterobius vermicularis</td>
-            <td>Fecal-oral, autoinfección</td>
-            <td>Mundial (niños)</td>
-            <td><span class="badge-ok">Baja</span></td>
-            <td>Mebendazol, Pamoato de pirantel</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p style="font-size:0.8rem; color:var(--text-muted); margin-top:0.5rem;">* Alta gravedad en inmunosuprimidos, embarazadas y fetos.</p>
-  </section>
-
-  <!-- CICLO DE VIDA -->
-  <section id="ciclo">
-    <div class="section-header">
-      <div class="icon">🔄</div>
-      <div>
-        <h2>Ciclos de Vida Parasitarios</h2>
-        <p>Fases de desarrollo y transmisión</p>
-      </div>
-    </div>
-
+  <div class="grid-2">
     <div class="card">
-      <h3>Ciclo de vida del Plasmodium (Malaria)</h3>
-      <div class="lifecycle">
-        <div class="lifecycle-step">
-          <div class="step-num">1</div>
-          <h4>Picadura del mosquito</h4>
-          <p>Anopheles infectado inocula esporozoítos al humano</p>
+      <h4>Parásito</h4>
+      <p>Organismo que obtiene beneficios viviendo sobre o dentro de otro (hospedador) causándole daño. La relación es asimétrica: el parásito depende del hospedador para su supervivencia y reproducción.</p>
+    </div>
+    <div class="card">
+      <h4>Hospedador definitivo</h4>
+      <p>Aquel en el que el parásito alcanza su madurez sexual o la fase adulta. Ejemplo: el humano es hospedador definitivo de <em>Taenia solium</em> (tenia adulta intestinal).</p>
+    </div>
+    <div class="card">
+      <h4>Hospedador intermediario</h4>
+      <p>Alberga estadios larvarios o asexuados del parásito. Puede haber más de uno (1.° y 2.°). Ejemplo: el cerdo es hospedador intermediario de <em>T. solium</em> (cisticercos en músculo).</p>
+    </div>
+    <div class="card">
+      <h4>Vector biológico</h4>
+      <p>Artrópodo en el que el parásito se desarrolla o multiplica antes de ser transmitido. El mosquito <em>Anopheles</em> es vector de <em>Plasmodium</em>; la vinchuca (<em>Triatoma</em>) lo es de <em>T. cruzi</em>.</p>
+    </div>
+    <div class="card">
+      <h4>Vector mecánico</h4>
+      <p>Transporta el parásito de forma pasiva, sin que este se desarrolle en él. Ejemplo: moscas que transportan quistes de <em>Entamoeba</em> en sus patas.</p>
+    </div>
+    <div class="card">
+      <h4>Reservorio</h4>
+      <p>Ser vivo o medio (agua, suelo) donde el parásito se mantiene en la naturaleza y sirve como fuente de infección para el humano. Esencial en el control epidemiológico.</p>
+    </div>
+  </div>
+
+  <div class="subsection"><h3>Tipos de parasitismo según localización</h3></div>
+  <div class="grid-3">
+    <div class="card"><h4>Ectoparasitismo</h4><p>El parásito vive sobre la superficie corporal: piel, pelo, plumas. Piojos, pulgas, garrapatas, ácaros.</p></div>
+    <div class="card"><h4>Endoparasitismo</h4><p>El parásito vive dentro del hospedador: intestino, sangre, tejidos, células. La mayoría de los parásitos médicamente relevantes.</p></div>
+    <div class="card"><h4>Parasitismo facultativo</h4><p>El organismo puede vivir libremente o como parásito según las condiciones. Ejemplo: <em>Naegleria fowleri</em>.</p></div>
+    <div class="card"><h4>Parasitismo obligado</h4><p>El parásito no puede completar su ciclo sin un hospedador. Todos los protozoos hemáticos y la mayoría de los helmintos.</p></div>
+    <div class="card"><h4>Hiperparasitismo</h4><p>Un parásito que vive a expensas de otro parásito. Tiene utilidad potencial en control biológico.</p></div>
+    <div class="card"><h4>Comensal vs. patógeno</h4><p>Algunos protozoos habitan el intestino sin causar daño (<em>E. coli</em>, <em>E. dispar</em>) pero pueden tornarse patógenos en condiciones de inmunosupresión.</p></div>
+  </div>
+
+  <div class="alert alert-i">
+    <div class="ai">ℹ️</div>
+    <div><strong>Carga global de enfermedad</strong>
+    <p>Las parasitosis representan más del 15 % de la carga global de enfermedades infecciosas. La malaria, leishmaniasis visceral, enfermedad de Chagas, esquistosomiasis y filariasis linfática están entre las principales causas de DALYs perdidos en países de ingresos bajos y medianos.</p></div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 2. CLASIFICACIÓN ═══════════════════ -->
+<section id="clasificacion">
+  <div class="section-header">
+    <div class="icon">🧫</div>
+    <div><h2>Clasificación de los Parásitos</h2><p>Grupos principales y características distintivas</p></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="cat-card protozoa">
+      <div class="ch"><span class="ico">🔵</span>Protozoos (unicelulares)</div>
+      <div class="cb">
+        <p>Eucariotas unicelulares. Se clasifican por su mecanismo de locomoción. Pueden reproducirse asexual (fisión binaria, esquizogonia) o sexualmente (gametogonia). Algunos forman quistes resistentes que permiten su transmisión.</p>
+        <div class="tags">
+          <span class="tag tg">Flagelados: Giardia, Trichomonas, Leishmania, Trypanosoma</span>
+          <span class="tag tg">Amebas: Entamoeba, Naegleria, Acanthamoeba</span>
+          <span class="tag tg">Ciliados: Balantidium coli</span>
+          <span class="tag tg">Apicomplexa: Plasmodium, Toxoplasma, Cryptosporidium, Babesia</span>
         </div>
-        <div class="lifecycle-step">
-          <div class="step-num">2</div>
-          <h4>Fase hepática</h4>
-          <p>Esporozoítos invaden hepatocitos y se reproducen (merozoítos)</p>
-        </div>
-        <div class="lifecycle-step">
-          <div class="step-num">3</div>
-          <h4>Fase eritrocítica</h4>
-          <p>Merozoítos invaden eritrocitos, se multiplican y los lisan (fiebre)</p>
-        </div>
-        <div class="lifecycle-step">
-          <div class="step-num">4</div>
-          <h4>Gametocitos</h4>
-          <p>Algunos merozoítos forman gametocitos que circulan en sangre</p>
-        </div>
-        <div class="lifecycle-step">
-          <div class="step-num">5</div>
-          <h4>Mosquito se infecta</h4>
-          <p>Nuevo Anopheles ingiere gametocitos; ciclo sexual en el mosquito</p>
+      </div>
+    </div>
+    <div class="cat-card helminths">
+      <div class="ch"><span class="ico">🟤</span>Helmintos (gusanos multicelulares)</div>
+      <div class="cb">
+        <p>Metazoos de cuerpo blando. Se dividen en <strong>Nematodos</strong> (cilíndricos, no segmentados), <strong>Tremátodos</strong> (planos con ventosas, no segmentados) y <strong>Céstodos</strong> (planos segmentados en proglótidos).</p>
+        <div class="tags">
+          <span class="tag tb">Nematodos: Ascaris, Enterobius, Trichuris, Strongyloides, Ancylostoma</span>
+          <span class="tag tb">Tremátodos: Schistosoma, Fasciola, Clonorchis</span>
+          <span class="tag tb">Céstodos: Taenia, Echinococcus, Hymenolepis, Diphyllobothrium</span>
         </div>
       </div>
     </div>
-
-    <div class="grid-2" style="margin-top:1rem;">
-      <div class="card">
-        <h3>Ciclo directo (monoxeno)</h3>
-        <p>El parásito completa todo su ciclo en <strong>un solo hospedador</strong>. No necesita vector ni hospedador intermediario. Ejemplo: <em>Enterobius vermicularis</em> (oxiuros), que pasa de huevo ingerido → larva → adulto en el intestino del mismo humano.</p>
-      </div>
-      <div class="card">
-        <h3>Ciclo indirecto (heteroxeno)</h3>
-        <p>El parásito requiere <strong>dos o más hospedadores</strong> para completar su ciclo. Ejemplo: <em>Taenia solium</em> usa al cerdo como hospedador intermediario (cisticercos en músculo) y al humano como hospedador definitivo (adulto en intestino).</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- DIAGNÓSTICO -->
-  <section id="diagnostico">
-    <div class="section-header">
-      <div class="icon">🧪</div>
-      <div>
-        <h2>Diagnóstico Parasitológico</h2>
-        <p>Métodos de identificación y confirmación</p>
+    <div class="cat-card ecto">
+      <div class="ch"><span class="ico">🟠</span>Ectoparásitos (artrópodos)</div>
+      <div class="cb">
+        <p>Viven sobre la superficie corporal. Muchos actúan como vectores de otros agentes infecciosos. Se dividen en insectos (6 patas) y arácnidos (8 patas).</p>
+        <div class="tags">
+          <span class="tag to">Insectos: Pediculus, Phthirus, pulgas (Ctenocephalides), Tunga penetrans</span>
+          <span class="tag to">Arácnidos: garrapatas (Ixodes, Dermacentor), Sarcoptes scabiei, Demodex</span>
+        </div>
       </div>
     </div>
-
-    <div class="grid-3">
-      <div class="diag-card">
-        <h4>Métodos directos</h4>
-        <ul>
-          <li>Examen coproparasitoscópico (ECP)</li>
-          <li>Frotis y gota gruesa en sangre</li>
-          <li>Método de Graham (oxiuros)</li>
-          <li>Biopsia de tejidos</li>
-          <li>Aspirado de médula ósea</li>
-          <li>Examen de líquido cefalorraquídeo</li>
-        </ul>
-      </div>
-      <div class="diag-card">
-        <h4>Métodos indirectos / serológicos</h4>
-        <ul>
-          <li>ELISA (Enzyme-Linked Immunosorbent Assay)</li>
-          <li>Inmunofluorescencia indirecta (IFI)</li>
-          <li>Hemaglutinación indirecta (HAI)</li>
-          <li>Western blot</li>
-          <li>Pruebas de aglutinación en látex</li>
-          <li>Prueba de Montenegro (leishmaniasis)</li>
-        </ul>
-      </div>
-      <div class="diag-card">
-        <h4>Biología molecular e imagen</h4>
-        <ul>
-          <li>PCR (Reacción en Cadena de Polimerasa)</li>
-          <li>PCR en tiempo real (qPCR)</li>
-          <li>LAMP (amplificación isotérmica)</li>
-          <li>Ultrasonido abdominal (hidatidosis)</li>
-          <li>TAC/RMN (neurocisticercosis)</li>
-          <li>Pruebas de diagnóstico rápido (TDR)</li>
-        </ul>
+    <div class="cat-card intra">
+      <div class="ch"><span class="ico">🟣</span>Parásitos intracelulares / frontera</div>
+      <div class="cb">
+        <p>Microorganismos con ciclo de vida obligatoriamente intracelular, situados en la frontera entre parasitología y microbiología. Importantes en pacientes inmunocomprometidos.</p>
+        <div class="tags">
+          <span class="tag tp">Cryptosporidium parvum</span>
+          <span class="tag tp">Microsporidium spp.</span>
+          <span class="tag tp">Pneumocystis jirovecii</span>
+          <span class="tag tp">Cyclospora cayetanensis</span>
+          <span class="tag tp">Isospora belli</span>
+        </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="card" style="margin-top:1rem; border-left: 4px solid var(--primary);">
-      <h3>Técnicas de concentración parasitológica</h3>
-      <p>Para mejorar la sensibilidad en heces se utilizan métodos de concentración como <strong>Ritchie</strong> (formol-acetato de etilo), <strong>Baermann</strong> (larvas móviles), <strong>Willis</strong> (flotación con solución saturada de NaCl) y <strong>Kato-Katz</strong> (cuantificación de huevos de helmintos). La microscopía electrónica se reserva para casos complejos.</p>
+<!-- ═══════════════════ 3. PROTOZOOS ═══════════════════ -->
+<section id="protozoos">
+  <div class="section-header">
+    <div class="icon">🦠</div>
+    <div><h2>Protozoos Patógenos</h2><p>Biología, patogenia y cuadro clínico de los principales géneros</p></div>
+  </div>
+
+  <div class="subsection"><h3>Plasmodium — Malaria / Paludismo</h3></div>
+  <div class="grid-2">
+    <div class="card">
+      <h4>Especies y gravedad</h4>
+      <ul>
+        <li><strong>P. falciparum:</strong> más grave, fiebre irregular, cerebral, alta mortalidad</li>
+        <li><strong>P. vivax / P. ovale:</strong> fiebre terciaria (48h), recaídas por hipnozoítos</li>
+        <li><strong>P. malariae:</strong> fiebre cuartana (72h), nefropatía crónica</li>
+        <li><strong>P. knowlesi:</strong> zoonótico, grave en adultos, SE Asia</li>
+      </ul>
     </div>
-  </section>
-
-  <!-- PREVENCIÓN -->
-  <section id="prevencion">
-    <div class="section-header">
-      <div class="icon">🛡️</div>
-      <div>
-        <h2>Prevención y Control</h2>
-        <p>Estrategias individuales y de salud pública</p>
-      </div>
+    <div class="card">
+      <h4>Patogenia</h4>
+      <ul>
+        <li>Lisis de eritrocitos → anemia hemolítica</li>
+        <li>Citoadherencia de eritrocitos parasitados (P. falciparum) → obstrucción microvascular</li>
+        <li>Producción de TNF-α, IL-1 → fiebre, escalofríos</li>
+        <li>Malaria cerebral: secuestro de eritrocitos en capilares cerebrales</li>
+        <li>Hipoglucemia por consumo de glucosa del parásito</li>
+      </ul>
     </div>
-
-    <div class="prevention-grid">
-      <div class="prevention-item">
-        <div class="icon">🚿</div>
-        <h4>Higiene personal</h4>
-        <p>Lavado frecuente de manos con agua y jabón, especialmente antes de comer y después del baño.</p>
-      </div>
-      <div class="prevention-item">
-        <div class="icon">💧</div>
-        <h4>Agua segura</h4>
-        <p>Consumir agua potable o hervida. Filtrar y clorar el agua en zonas sin saneamiento.</p>
-      </div>
-      <div class="prevention-item">
-        <div class="icon">🥩</div>
-        <h4>Cocción adecuada</h4>
-        <p>Cocinar bien carnes (70°C interno) para destruir quistes y larvas (Toxoplasma, Trichinella, Taenia).</p>
-      </div>
-      <div class="prevention-item">
-        <div class="icon">🦟</div>
-        <h4>Control de vectores</h4>
-        <p>Uso de mosquiteros impregnados, repelentes, fumigaciones y eliminación de criaderos de mosquitos.</p>
-      </div>
-      <div class="prevention-item">
-        <div class="icon">🐾</div>
-        <h4>Salud animal</h4>
-        <p>Desparasitar mascotas, controlar roedores y evitar contacto con heces de animales en áreas de juego.</p>
-      </div>
-      <div class="prevention-item">
-        <div class="icon">🏘️</div>
-        <h4>Saneamiento</h4>
-        <p>Mejora de letrinas, gestión de residuos sólidos y acceso a sistemas de agua y alcantarillado.</p>
-      </div>
-      <div class="prevention-item">
-        <div class="icon">💊</div>
-        <h4>Quimioprofilaxis</h4>
-        <p>Tratamiento preventivo masivo (TPM) en comunidades endémicas con albendazol o ivermectina.</p>
-      </div>
-      <div class="prevention-item">
-        <div class="icon">🌿</div>
-        <h4>Educación sanitaria</h4>
-        <p>Concientización comunitaria sobre modos de transmisión y medidas de higiene en escuelas y hogares.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- GLOSARIO -->
-  <section id="glosario">
-    <div class="section-header">
-      <div class="icon">📖</div>
-      <div>
-        <h2>Glosario de Términos</h2>
-        <p>Conceptos fundamentales en parasitología</p>
+  </div>
+  <div class="clinical">
+    <div class="cl-head">Cuadro clínico — Malaria</div>
+    <div class="cl-body">
+      <p>Período de incubación: 7–30 días según especie. El paroxismo palúdico clásico comprende tres fases: fría (escalofrío, 15–60 min), caliente (fiebre 39–41°C, cefalea, mialgias) y sudorosa (diaforesis, sensación de mejoría).</p>
+      <div class="row">
+        <div class="col">
+          <h5>Signos y síntomas</h5>
+          <ul>
+            <li>Fiebre periódica (48 h o 72 h)</li>
+            <li>Esplenomegalia (bazo palúdico)</li>
+            <li>Anemia hemolítica, ictericia</li>
+            <li>Cefalea intensa, mialgias</li>
+            <li>Hepatomegalia</li>
+            <li>Orina color cola (hemoglobinuria)</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h5>Complicaciones graves (P. falciparum)</h5>
+          <ul>
+            <li>Malaria cerebral: convulsiones, coma</li>
+            <li>Síndrome de dificultad respiratoria aguda</li>
+            <li>Insuficiencia renal aguda</li>
+            <li>Hipoglucemia grave</li>
+            <li>Fiebre hemoglobinúrica</li>
+            <li>Malaria grave en embarazo: bajo peso al nacer</li>
+          </ul>
+        </div>
       </div>
     </div>
+  </div>
 
+  <div class="subsection"><h3>Trypanosoma — Tripanosomiasis</h3></div>
+  <div class="grid-2">
+    <div class="card">
+      <h4>T. cruzi — Enfermedad de Chagas (América)</h4>
+      <ul>
+        <li><strong>Vector:</strong> Triatoma (vinchuca/chinche besucona)</li>
+        <li><strong>Fase aguda:</strong> chagoma, signo de Romaña, fiebre, miocarditis</li>
+        <li><strong>Fase crónica:</strong> miocardiopatía chagásica dilatada, megaesófago, megacolon</li>
+        <li><strong>Formas:</strong> tripomastigote (sangre), amastigote (intracelular), epimastigote (vector)</li>
+        <li>Afecta ~6–7 millones de personas en Latinoamérica</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>T. brucei — Enfermedad del Sueño (África)</h4>
+      <ul>
+        <li><strong>Vector:</strong> mosca tsé-tsé (<em>Glossina</em>)</li>
+        <li><strong>T. b. gambiense:</strong> crónica (meses-años), África Occidental</li>
+        <li><strong>T. b. rhodesiense:</strong> aguda (semanas), África Oriental, más grave</li>
+        <li><strong>Etapa 1:</strong> fiebre, linfadenopatía (signo de Winterbottom)</li>
+        <li><strong>Etapa 2:</strong> meningoencefalitis: somnolencia, confusión, coma</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="subsection"><h3>Leishmania — Leishmaniasis</h3></div>
+  <div class="grid-3">
+    <div class="card">
+      <h4>Cutánea</h4>
+      <p>Úlcera indolora de bordes indurados ("úlcera de los chicleros"). Causada por <em>L. major, L. tropica, L. mexicana</em>. Afecta piel, cicatriza espontáneamente en meses.</p>
+    </div>
+    <div class="card">
+      <h4>Mucocutánea (Espundia)</h4>
+      <p>Destrucción de mucosas nasal, oral y faríngea. Causada por <em>L. braziliensis</em>. Muy desfigurante, no cicatriza espontáneamente. Sudamérica.</p>
+    </div>
+    <div class="card">
+      <h4>Visceral (Kala-azar)</h4>
+      <p>Fiebre irregular, esplenomegalia masiva, hepatomegalia, pancitopenia, hipergammaglobulinemia. <em>L. donovani, L. infantum/chagasi</em>. Mortal sin tratamiento.</p>
+    </div>
+  </div>
+
+  <div class="subsection"><h3>Entamoeba histolytica — Amebiasis</h3></div>
+  <div class="card">
+    <h4>Biología y patogenia</h4>
+    <p><em>E. histolytica</em> se diferencia de la comensal <em>E. dispar</em> (morfológicamente idéntica) por producir lectinas que lisan células del colon, generando úlceras en "botón de camisa" (cuello estrecho y base ancha). Puede diseminarse hematógenamente al hígado (absceso amebiano hepático). La forma quística es la infectante; el trofozoíto produce la enfermedad. Transmisión fecal-oral.</p>
+  </div>
+  <div class="clinical">
+    <div class="cl-head">Cuadro clínico — Amebiasis</div>
+    <div class="cl-body">
+      <div class="row">
+        <div class="col">
+          <h5>Intestinal</h5>
+          <ul>
+            <li>Diarrea con moco y sangre (disentería amebiana)</li>
+            <li>Cólicos abdominales, tenesmo</li>
+            <li>Colitis fulminante (rara, grave)</li>
+            <li>Ameboma (masa granulomatosa en colon)</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h5>Extraintestinal</h5>
+          <ul>
+            <li>Absceso hepático amebiano: fiebre, dolor hipocondrio derecho</li>
+            <li>Absceso pulmonar (por contigüidad)</li>
+            <li>Absceso cerebral (raro, alta mortalidad)</li>
+            <li>Peritonitis por ruptura de absceso</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection"><h3>Otros protozoos importantes</h3></div>
+  <div class="grid-2">
+    <div class="card">
+      <h4>Giardia lamblia (intestinalis)</h4>
+      <ul>
+        <li>Protozoo flagelado, forma de pera con 2 núcleos y 4 pares de flagelos</li>
+        <li>Se adhiere al duodeno mediante disco adhesivo → malabsorción</li>
+        <li>Clínica: diarrea acuosa, esteatorrea, distensión, flatulencia</li>
+        <li>Infección crónica → déficit de vitamina B12, A, D</li>
+        <li>Diagnóstico: quistes en heces, ELISA coprológico</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Toxoplasma gondii</h4>
+      <ul>
+        <li>Hospedador definitivo: gato (ooquistes en heces)</li>
+        <li>Infección humana: carne cruda, verduras contaminadas, congénita</li>
+        <li>En inmunocompetentes: generalmente asintomática</li>
+        <li>Grave en embarazo: aborto, hidrocefalia, coriorretinitis, calcificaciones cerebrales</li>
+        <li>En VIH: encefalitis toxoplásmica (lesiones en "anillo" en TC)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Cryptosporidium parvum</h4>
+      <ul>
+        <li>Ooquistes muy resistentes al cloro del agua potable</li>
+        <li>Inmunocompetentes: diarrea acuosa autolimitada (1–2 semanas)</li>
+        <li>Pacientes con VIH: diarrea crónica masiva, colangiopatía, mortal</li>
+        <li>Brotes por agua de piscinas y suministro público</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Trichomonas vaginalis</h4>
+      <ul>
+        <li>ITS (infección de transmisión sexual) más prevalente en el mundo</li>
+        <li>Mujeres: vaginitis con flujo amarillo-verdoso espumoso, prurito, disuria</li>
+        <li>Hombres: generalmente asintomático (portadores)</li>
+        <li>Asociada a mayor riesgo de VIH y parto prematuro</li>
+        <li>Diagnóstico: examen en fresco (trofozoítos móviles), PCR</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="study-box">
+    <h4>📌 Claves de estudio — Protozoos</h4>
+    <ul>
+      <li>Plasmodium: solo en la especie <em>falciparum</em> se produce la citoadherencia y rosetting que causa malaria cerebral.</li>
+      <li>T. cruzi amastigote es intracelular; tripomastigote es la forma en sangre y es la que se diagnostica en gota gruesa y frotis.</li>
+      <li>Leishmania: el macrófago es la célula diana; la leishmaniasis visceral afecta el sistema reticuloendotelial.</li>
+      <li><em>E. histolytica</em> ≠ <em>E. dispar</em>: solo la primera es patógena y tiene eritrocitos fagocitados en el trofozoíto.</li>
+      <li>Toxoplasmosis congénita: la tríada clásica es coriorretinitis + hidrocefalia + calcificaciones cerebrales periventriculares.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══════════════════ 4. HELMINTOS ═══════════════════ -->
+<section id="helmintos">
+  <div class="section-header">
+    <div class="icon">🪱</div>
+    <div><h2>Helmintos</h2><p>Nematodos, tremátodos y céstodos de importancia médica</p></div>
+  </div>
+
+  <div class="subsection"><h3>Nematodos intestinales</h3></div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Parásito</th><th>Nombre común</th><th>Infección</th><th>Localización</th><th>Manifestación principal</th><th>Diagnóstico</th></tr></thead>
+      <tbody>
+        <tr><td><em>Ascaris lumbricoides</em></td><td>Lombriz intestinal</td><td>Ingestión de huevos (suelo)</td><td>Intestino delgado</td><td>Obstrucción intestinal, síndrome de Löffler (pulmón)</td><td>Huevos en heces</td></tr>
+        <tr><td><em>Enterobius vermicularis</em></td><td>Oxiuro / pinworm</td><td>Fecal-oral, autoinfección</td><td>Ciego, apéndice, colon</td><td>Prurito anal nocturno intenso</td><td>Cinta adhesiva (Graham)</td></tr>
+        <tr><td><em>Trichuris trichiura</em></td><td>Tricocéfalo</td><td>Ingestión de huevos</td><td>Ciego y colon</td><td>Disentería, prolapso rectal (infección masiva)</td><td>Huevos con tapones bipolares</td></tr>
+        <tr><td><em>Ancylostoma / Necator</em></td><td>Anquilostoma / uncinaria</td><td>Penetración larval cutánea</td><td>Intestino delgado</td><td>Anemia ferropénica, hipoproteinemia</td><td>Huevos en heces</td></tr>
+        <tr><td><em>Strongyloides stercoralis</em></td><td>Estrongiloides</td><td>Penetración cutánea</td><td>Intestino delgado</td><td>Larva currens; hiperinfección en inmunosuprimidos</td><td>Larvas en heces (Baermann)</td></tr>
+        <tr><td><em>Trichinella spiralis</em></td><td>Triquina</td><td>Carne de cerdo cruda</td><td>Músculo esquelético</td><td>Miositis, edema periorbitario, eosinofilia marcada</td><td>Biopsia muscular, serología</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="subsection"><h3>Nematodos tisulares (filarias)</h3></div>
+  <div class="grid-2">
+    <div class="card">
+      <h4>Wuchereria bancrofti / Brugia malayi — Filariasis linfática (Elefantiasis)</h4>
+      <ul>
+        <li>Transmisión: picadura de mosquito (<em>Culex, Aedes, Anopheles</em>)</li>
+        <li>Las microfilarias circulan en sangre (periodicidad nocturna)</li>
+        <li>Gusanos adultos obstruyen vasos linfáticos → linfedema crónico</li>
+        <li>Elefantiasis de miembros inferiores, escroto (hidrocele)</li>
+        <li>Afecta ~120 millones de personas; 40 millones con discapacidad</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Onchocerca volvulus — Oncocercosis ("ceguera de los ríos")</h4>
+      <ul>
+        <li>Transmisión: mosca negra (<em>Simulium</em>), riberas de ríos rápidos</li>
+        <li>Microfilarias en piel y córnea → queratitis esclerosante → ceguera</li>
+        <li>Nódulos subcutáneos (oncocercomas) con adultos</li>
+        <li>Prurito intenso (oncodermatitis)</li>
+        <li>Segunda causa infecciosa de ceguera en el mundo</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="subsection"><h3>Tremátodos (duelas)</h3></div>
+  <div class="grid-2">
+    <div class="card">
+      <h4>Schistosoma spp. — Esquistosomiasis (Bilharzia)</h4>
+      <ul>
+        <li><strong>Transmisión:</strong> penetración activa de cercarias en agua dulce</li>
+        <li><em>S. mansoni:</em> colon, hígado (fibrosis periportal, hipertensión portal)</li>
+        <li><em>S. haematobium:</em> vejiga (hematuria, carcinoma vesical)</li>
+        <li><em>S. japonicum:</em> intestino delgado, hígado, sistema nervioso</li>
+        <li>Dermatitis del bañista: reacción cutánea al penetrar las cercarias</li>
+        <li>Fiebre de Katayama (fase aguda): fiebre, urticaria, eosinofilia</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Fasciola hepatica — Fasciolosis</h4>
+      <ul>
+        <li>Duela del hígado de bovinos y ovinos; zoonosis</li>
+        <li>Infección: ingestión de berros y plantas acuáticas con metacercarias</li>
+        <li>Migración de larvas por parénquima hepático → hepatitis aguda</li>
+        <li>Adultos en conductos biliares: colangitis, cólico biliar, ictericia</li>
+        <li>Diagnóstico: huevos en heces, ELISA. Tratamiento: triclabendazol</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="subsection"><h3>Céstodos (tenias)</h3></div>
+  <div class="grid-2">
+    <div class="card">
+      <h4>Taenia solium y cisticercosis</h4>
+      <ul>
+        <li><strong>Teniasis:</strong> adulto en intestino humano; ingestión de carne de cerdo con cisticercos</li>
+        <li><strong>Cisticercosis:</strong> humano como hospedador intermediario (ingiere huevos); larvas en músculos, SNC, ojos</li>
+        <li><strong>Neurocisticercosis:</strong> principal causa de epilepsia adquirida en Latinoamérica; convulsiones, hipertensión intracraneal</li>
+        <li>Diagnóstico: TC/RMN cerebral (quistes calcificados), Western blot</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Echinococcus — Hidatidosis</h4>
+      <ul>
+        <li>Hospedador definitivo: perro (y otros cánidos)</li>
+        <li>Hospedador intermediario: oveja, bovinos, humano (accidental)</li>
+        <li>Quiste hidatídico en hígado (70%), pulmón (20%), cerebro</li>
+        <li>Ruptura del quiste → reacción anafiláctica grave + siembra secundaria</li>
+        <li>Diagnóstico: ecografía (signo del nenúfar), serología (arco 5)</li>
+        <li>Tratamiento: PAIR (punción-aspiración) + albendazol, o cirugía</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Taenia saginata</h4>
+      <ul>
+        <li>Hospedador intermediario: bovinos (cisticercosis bovina)</li>
+        <li>Humano solo hospedador definitivo (no hay cisticercosis humana)</li>
+        <li>Tenia más larga: hasta 10 metros</li>
+        <li>Síntomas leves: náuseas, dolor abdominal, expulsión de proglótidos</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Diphyllobothrium latum</h4>
+      <ul>
+        <li>Tenia del pescado; puede alcanzar 10–15 metros</li>
+        <li>Hospedador intermediario: crustáceos y peces de agua dulce</li>
+        <li>Compite por vitamina B12 → anemia megaloblástica (anemia "del botriocéfalo")</li>
+        <li>Diagnóstico: huevos operculados en heces</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="study-box">
+    <h4>📌 Claves de estudio — Helmintos</h4>
+    <ul>
+      <li>Eosinofilia marcada = helminto tisular (migración larvaria). Los helmintos intestinales en fase luminal dan menos eosinofilia.</li>
+      <li>Oxiuros: única prueba diagnóstica es la cinta adhesiva perianal (Graham), NO coprocultivo.</li>
+      <li>Strongyloides: único helminto con ciclo de autoinfección interna; peligroso en pacientes con corticosteroides (hiperinfección).</li>
+      <li>Neurocisticercosis = huevos de T. solium (fecal-oral), NO por comer cerdo. Comer cerdo da teniasis intestinal.</li>
+      <li>Esquistosoma: única duela con sexos separados; la hembra vive en el canal ginecóforo del macho.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══════════════════ 5. ECTOPARÁSITOS ═══════════════════ -->
+<section id="ecto">
+  <div class="section-header">
+    <div class="icon">🦟</div>
+    <div><h2>Ectoparásitos</h2><p>Artrópodos parásitos y su rol como vectores</p></div>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Parásito</th><th>Nombre</th><th>Enfermedad directa</th><th>Enfermedades transmitidas</th><th>Tratamiento</th></tr></thead>
+      <tbody>
+        <tr><td><em>Pediculus humanus capitis</em></td><td>Piojo de la cabeza</td><td>Pediculosis, prurito</td><td>—</td><td>Permetrina, malatión</td></tr>
+        <tr><td><em>Pediculus humanus corporis</em></td><td>Piojo del cuerpo</td><td>Pediculosis, rash</td><td>Tifus epidémico (<em>R. prowazekii</em>), fiebre recurrente, fiebre de las trincheras</td><td>Permetrina, higiene</td></tr>
+        <tr><td><em>Phthirus pubis</em></td><td>Ladilla / piojo del pubis</td><td>Prurito púbico</td><td>—</td><td>Permetrina</td></tr>
+        <tr><td><em>Sarcoptes scabiei</em></td><td>Ácaro de la sarna</td><td>Sarna / escabiosis: prurito nocturno, surcos acarinos</td><td>—</td><td>Permetrina tópica, ivermectina oral</td></tr>
+        <tr><td><em>Ixodes scapularis</em></td><td>Garrapata de patas negras</td><td>Parálisis por garrapata</td><td>Enfermedad de Lyme (<em>Borrelia burgdorferi</em>), babesiosis, anaplasmosis</td><td>Extracción, doxiciclina (Lyme)</td></tr>
+        <tr><td><em>Dermacentor variabilis</em></td><td>Garrapata americana del perro</td><td>—</td><td>Fiebre maculosa de las Montañas Rocosas (<em>R. rickettsii</em>), tularemia</td><td>Extracción, doxiciclina</td></tr>
+        <tr><td><em>Ctenocephalides felis/canis</em></td><td>Pulga del gato/perro</td><td>Dermatitis alérgica</td><td>Tifus murino (<em>R. typhi</em>), teniasis por <em>Dipylidium caninum</em>, plaga (Yersinia)</td><td>Insecticidas, fipronil</td></tr>
+        <tr><td><em>Tunga penetrans</em></td><td>Nigua / pique</td><td>Tungosis (lesión ulcerada en pie)</td><td>—</td><td>Extracción mecánica</td></tr>
+        <tr><td><em>Demodex folliculorum</em></td><td>Ácaro del folículo</td><td>Demodecosis, rosácea, blefaritis</td><td>—</td><td>Metronidazol, ivermectina</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="alert alert-w">
+    <div class="ai">⚠️</div>
+    <div><strong>Importancia de los vectores artrópodos</strong>
+    <p>Los artrópodos transmiten más del 17% de las enfermedades infecciosas a nivel global. Los mosquitos (<em>Anopheles, Aedes, Culex</em>) solos son responsables de la transmisión de malaria, dengue, zika, chikungunya, fiebre amarilla, encefalitis y filariasis.</p></div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 6. ENFERMEDADES ═══════════════════ -->
+<section id="enfermedades">
+  <div class="section-header">
+    <div class="icon">🏥</div>
+    <div><h2>Principales Enfermedades Parasitarias</h2><p>Resumen clínico, epidemiología y tratamiento</p></div>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Enfermedad</th><th>Agente</th><th>Transmisión</th><th>Distribución</th><th>Periodo incubación</th><th>Gravedad</th><th>Tratamiento 1.ª línea</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Malaria</strong></td><td><em>Plasmodium spp.</em></td><td>Picadura Anopheles</td><td>África, Asia, Américas</td><td>7–30 días</td><td><span class="bd">Alta</span></td><td>Artemeter + lumefantrina</td></tr>
+        <tr><td><strong>Chagas</strong></td><td><em>T. cruzi</em></td><td>Triatoma, congénita, transfusiones</td><td>Latinoamérica</td><td>1–2 semanas (aguda)</td><td><span class="bd">Alta (crónica)</span></td><td>Benznidazol</td></tr>
+        <tr><td><strong>Leishmaniasis visceral</strong></td><td><em>L. donovani</em></td><td>Flebotomo</td><td>Asia del Sur, África, Mediterráneo</td><td>Meses</td><td><span class="bd">Alta</span></td><td>Anfotericina B liposomal</td></tr>
+        <tr><td><strong>Amebiasis</strong></td><td><em>E. histolytica</em></td><td>Fecal-oral</td><td>Trópicos y subtrópicos</td><td>1–4 semanas</td><td><span class="bw">Moderada</span></td><td>Metronidazol + paromomicina</td></tr>
+        <tr><td><strong>Giardiasis</strong></td><td><em>G. lamblia</em></td><td>Agua/alimentos, fecal-oral</td><td>Mundial</td><td>1–3 semanas</td><td><span class="bg">Baja</span></td><td>Metronidazol / tinidazol</td></tr>
+        <tr><td><strong>Toxoplasmosis</strong></td><td><em>T. gondii</em></td><td>Carne cruda, heces de gato</td><td>Mundial</td><td>10–23 días</td><td><span class="bw">Alta (congénita/VIH)</span></td><td>Pirimetamina + sulfadiazina</td></tr>
+        <tr><td><strong>Neurocisticercosis</strong></td><td><em>T. solium</em> (larvas)</td><td>Ingestión de huevos</td><td>Latinoamérica, África, Asia</td><td>Meses–años</td><td><span class="bd">Alta (SNC)</span></td><td>Albendazol + praziquantel ± corticoides</td></tr>
+        <tr><td><strong>Hidatidosis</strong></td><td><em>Echinococcus granulosus</em></td><td>Contacto con perros, heces</td><td>Zonas ganaderas mundial</td><td>Años</td><td><span class="bw">Moderada–Alta</span></td><td>PAIR + albendazol / cirugía</td></tr>
+        <tr><td><strong>Esquistosomiasis</strong></td><td><em>Schistosoma spp.</em></td><td>Cercarias en agua dulce</td><td>África, Asia, Sudamérica</td><td>4–6 semanas</td><td><span class="bw">Moderada–Alta</span></td><td>Praziquantel</td></tr>
+        <tr><td><strong>Ascariasis</strong></td><td><em>A. lumbricoides</em></td><td>Ingestión de huevos (suelo)</td><td>Trópicos y subtrópicos</td><td>4–8 semanas</td><td><span class="bg">Variable</span></td><td>Albendazol / mebendazol</td></tr>
+        <tr><td><strong>Filariasis linfática</strong></td><td><em>W. bancrofti</em></td><td>Picadura de mosquito</td><td>África, Asia, Pacífico</td><td>Meses–años</td><td><span class="bw">Moderada</span></td><td>Dietilcarbamazina (DEC) + albendazol</td></tr>
+        <tr><td><strong>Oncocercosis</strong></td><td><em>O. volvulus</em></td><td>Mosca Simulium</td><td>África subsahariana, Yemen</td><td>Meses</td><td><span class="bd">Alta (ceguera)</span></td><td>Ivermectina (anual)</td></tr>
+        <tr><td><strong>Tricomonosis</strong></td><td><em>T. vaginalis</em></td><td>Sexual</td><td>Mundial</td><td>5–28 días</td><td><span class="bg">Baja</span></td><td>Metronidazol (pareja)</td></tr>
+        <tr><td><strong>Cryptosporidiosis</strong></td><td><em>Cryptosporidium spp.</em></td><td>Agua, fecal-oral</td><td>Mundial</td><td>2–10 días</td><td><span class="bd">Alta (VIH)</span></td><td>Nitazoxanida (inmunocompetentes)</td></tr>
+        <tr><td><strong>Sarna</strong></td><td><em>Sarcoptes scabiei</em></td><td>Contacto directo</td><td>Mundial</td><td>2–6 semanas</td><td><span class="bg">Baja</span></td><td>Permetrina 5% tópica</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════════════════ 7. CICLOS DE VIDA ═══════════════════ -->
+<section id="ciclos">
+  <div class="section-header">
+    <div class="icon">🔄</div>
+    <div><h2>Ciclos de Vida Parasitarios</h2><p>Fases de desarrollo, hospedadores y estadios</p></div>
+  </div>
+
+  <div class="card">
+    <h4>Ciclo de Plasmodium (Malaria)</h4>
+    <div class="lifecycle">
+      <div class="ls"><div class="sn">1</div><h4>Inoculación</h4><p>Anopheles hembra inyecta esporozoítos en sangre humana</p></div>
+      <div class="ls"><div class="sn">2</div><h4>Fase hepática</h4><p>Esporozoítos invaden hepatocitos → esquizogonia hepática → merozoítos (P. vivax forma hipnozoítos latentes)</p></div>
+      <div class="ls"><div class="sn">3</div><h4>Fase eritrocítica</h4><p>Merozoítos invaden eritrocitos → trofozoíto → esquizonte → lisis y liberación (fiebre periódica)</p></div>
+      <div class="ls"><div class="sn">4</div><h4>Gametocitos</h4><p>Algunos merozoítos diferencian en gametocitos macro y micro en sangre periférica</p></div>
+      <div class="ls"><div class="sn">5</div><h4>Mosquito</h4><p>Mosquito ingiere gametocitos → fecundación → ooquiste en pared estomacal → esporozoítos en glándulas salivales</p></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h4>Ciclo de Taenia solium (Teniasis / Cisticercosis)</h4>
+    <div class="lifecycle">
+      <div class="ls"><div class="sn">1</div><h4>Proglótidos en heces</h4><p>Humano (H. definitivo) elimina proglótidos grávidos con huevos en heces</p></div>
+      <div class="ls"><div class="sn">2</div><h4>Contaminación ambiental</h4><p>Cerdo ingiere huevos del suelo → oncosfera eclosiona en intestino</p></div>
+      <div class="ls"><div class="sn">3</div><h4>Cisticerco en cerdo</h4><p>Larvas migran a músculo esquelético y cerebro del cerdo → cisticerco (larva enquistada)</p></div>
+      <div class="ls"><div class="sn">4</div><h4>Teniasis humana</h4><p>Humano come carne de cerdo cruda con cisticercos → escólex se evagina y fija en intestino delgado</p></div>
+      <div class="ls"><div class="sn">5</div><h4>Cisticercosis humana</h4><p>Humano ingiere huevos (fecal-oral) → cisticercos en SNC, ojos, músculo → neurocisticercosis</p></div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h4>Ciclo de Schistosoma</h4>
+      <ul>
+        <li>Caracol de agua dulce (<em>Biomphalaria</em>) libera cercarias</li>
+        <li>Cercarias penetran activamente piel intacta en agua</li>
+        <li>Se transforman en esquistosómulas → migran por sangre hasta venas mesentéricas o vesicales</li>
+        <li>Adultos se aparean en los vasos → huevos escapan hacia intestino o vejiga → eliminados en heces/orina</li>
+        <li>Miracidio (larva ciliada) en agua infecta nuevo caracol</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Ciclo de Trypanosoma cruzi</h4>
+      <ul>
+        <li>Vinchuca pica al humano y defeca; los tripomastigotes metacíclicos entran por herida o mucosa</li>
+        <li>Invaden macrófagos y células musculares → amastigotes intracelulares</li>
+        <li>Amastigotes se dividen → tripomastigotes sanguíneos → circulación</li>
+        <li>Nueva vinchuca ingiere tripomastigotes → epimastigotes en intestino del insecto → metacíclicos en recto</li>
+        <li>También: congénita, transfusiones de sangre, trasplante de órganos</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 8. INMUNOLOGÍA ═══════════════════ -->
+<section id="inmuno">
+  <div class="section-header">
+    <div class="icon">🛡️</div>
+    <div><h2>Inmunología de las Parasitosis</h2><p>Respuesta del hospedador y mecanismos de evasión</p></div>
+  </div>
+
+  <div class="subsection"><h3>Respuesta inmune ante parásitos</h3></div>
+  <div class="grid-2">
+    <div class="card">
+      <h4>Respuesta Th1 (intracelulares)</h4>
+      <p>Frente a parásitos intracelulares como <em>Leishmania</em> y <em>Toxoplasma</em>, se activa la respuesta Th1: IFN-γ activa macrófagos para destruir parásitos intracelulares. IL-12 impulsa la diferenciación Th1. La respuesta Th1 es protectora en leishmaniasis cutánea pero insuficiente en visceral.</p>
+    </div>
+    <div class="card">
+      <h4>Respuesta Th2 (helmintos)</h4>
+      <p>Frente a helmintos se activa Th2: IL-4, IL-5, IL-13. La IL-5 estimula eosinófilos (eosinofilia característica). La IgE se une a antígenos del helminto y activa mastocitos y eosinófilos. Las células caliciformes producen moco → expulsión del parásito.</p>
+    </div>
+    <div class="card">
+      <h4>Papel de la IgE</h4>
+      <p>Las parasitosis helmínticas inducen elevación marcada de IgE total. Los eosinófilos con IgE de superficie realizan citotoxicidad dependiente de anticuerpos (ADCC) contra larvas. Niveles altos de IgE pueden interferir en las pruebas alérgicas.</p>
+    </div>
+    <div class="card">
+      <h4>Eosinofilia parasitaria</h4>
+      <p>El grado de eosinofilia es proporcional al grado de invasión tisular por helmintos. Es mayor en migraciones larvarias (Löffler, larva migrans visceral). Los helmintos puramente luminales (oxiuros adultos) dan mínima eosinofilia.</p>
+    </div>
+  </div>
+
+  <div class="subsection"><h3>Mecanismos de evasión inmune</h3></div>
+  <div class="grid-3">
+    <div class="card">
+      <h4>Variación antigénica</h4>
+      <p><em>Trypanosoma brucei</em> cambia su glicoproteína de superficie variable (VSG) cada pocas generaciones → el sistema inmune no puede eliminarlo definitivamente.</p>
+    </div>
+    <div class="card">
+      <h4>Mimetismo molecular</h4>
+      <p><em>Schistosoma</em> adsorbe proteínas del hospedador en su tegumento → el sistema inmune no lo reconoce como extraño (camuflaje inmunológico).</p>
+    </div>
+    <div class="card">
+      <h4>Inmunosupresión activa</h4>
+      <p><em>Leishmania</em> inhibe la producción de IL-12 y suprime la explosión oxidativa en macrófagos. <em>T. cruzi</em> inhibe la vía del complemento con su calreticulina.</p>
+    </div>
+    <div class="card">
+      <h4>Localización intracelular</h4>
+      <p><em>Toxoplasma</em> vive en una vacuola parasitófora que no se fusiona con lisosomas, evitando la degradación enzimática. <em>Leishmania</em> resiste el ambiente ácido del fagolisosoma.</p>
+    </div>
+    <div class="card">
+      <h4>Quistificación</h4>
+      <p><em>Toxoplasma</em> forma bradizoítos dentro de quistes tisulares que son inaccesibles a anticuerpos. <em>Echinococcus</em> en el quiste hidatídico está protegido por la capa laminar.</p>
+    </div>
+    <div class="card">
+      <h4>Modulación Th2</h4>
+      <p>Los helmintos inducen respuestas Th2 reguladoras (IL-10, TGF-β) que suprimen inflamación excesiva pero también la inmunidad protectora. Esto explica las coinfecciones frecuentes en zonas endémicas.</p>
+    </div>
+  </div>
+
+  <div class="alert alert-g">
+    <div class="ai">💡</div>
+    <div><strong>Parasitosis en inmunocomprometidos</strong>
+    <p>Los pacientes con VIH/SIDA (CD4 &lt; 200 céls/µL), trasplantados y pacientes en quimioterapia son muy vulnerables a: toxoplasmosis cerebral, criptosporidiosis crónica, microsporidiosis, estrongiloidiasis diseminada (hiperinfección), leishmaniasis visceral e isosporidiosis crónica.</p></div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 9. DIAGNÓSTICO ═══════════════════ -->
+<section id="diagnostico">
+  <div class="section-header">
+    <div class="icon">🧪</div>
+    <div><h2>Diagnóstico Parasitológico</h2><p>Métodos de laboratorio, indicaciones y sensibilidad</p></div>
+  </div>
+
+  <div class="grid-3">
+    <div class="dc">
+      <h4>Métodos coprológicos directos</h4>
+      <ul>
+        <li>Examen coproparasitoscópico (ECP) en fresco</li>
+        <li>Tinción de Lugol (quistes), tricrómica, Ziehl-Neelsen modificado (Cryptosporidium, Cyclospora)</li>
+        <li>Concentración por Ritchie (formol-éter)</li>
+        <li>Método de flotación Willis (NaCl saturado)</li>
+        <li>Método de Kato-Katz (cuantificación de huevos)</li>
+        <li>Cinta adhesiva de Graham (Enterobius)</li>
+        <li>Método de Baermann (larvas de Strongyloides)</li>
+      </ul>
+    </div>
+    <div class="dc">
+      <h4>Métodos hemáticos</h4>
+      <ul>
+        <li>Gota gruesa y frotis (Plasmodium, Trypanosoma, microfilarias)</li>
+        <li>Concentración Knott (microfilarias)</li>
+        <li>Hemocultivo en NNN (Leishmania, Trypanosoma)</li>
+        <li>Test de diagnóstico rápido (TDR): HRP-2 para P. falciparum</li>
+        <li>Bioquímica: hemograma (anemia, eosinofilia), bilirrubina, LDH</li>
+      </ul>
+    </div>
+    <div class="dc">
+      <h4>Serología e inmunología</h4>
+      <ul>
+        <li>ELISA (Toxoplasma, Chagas, hidatidosis, Leishmania)</li>
+        <li>Inmunofluorescencia indirecta (IFI)</li>
+        <li>Western blot (cisticercosis: arco 5)</li>
+        <li>Hemaglutinación indirecta (HAI)</li>
+        <li>Prueba de Montenegro (intradermorreacción para Leishmania)</li>
+        <li>Prueba de látex (E. granulosus)</li>
+      </ul>
+    </div>
+    <div class="dc">
+      <h4>Biología molecular</h4>
+      <ul>
+        <li>PCR convencional y en tiempo real (qPCR) — alta sensibilidad/especificidad</li>
+        <li>LAMP (amplificación isotérmica de bucle) — campo, recursos limitados</li>
+        <li>Secuenciación (identificación de especie)</li>
+        <li>PCR multiplex (diferencia P. falciparum de otras especies)</li>
+      </ul>
+    </div>
+    <div class="dc">
+      <h4>Imágenes</h4>
+      <ul>
+        <li>Ecografía abdominal: hidatidosis, absceso amebiano, filariasis (signo de la danza)</li>
+        <li>TAC cerebral: neurocisticercosis (quistes, calcificaciones en "palomitas de maíz")</li>
+        <li>RMN cerebral: toxoplasmosis (lesiones en "anillo" con edema), encefalitis tripanosómica</li>
+        <li>Radiografía de tórax: síndrome de Löffler, hidatidosis pulmonar</li>
+      </ul>
+    </div>
+    <div class="dc">
+      <h4>Histopatología y biopsia</h4>
+      <ul>
+        <li>Biopsia de piel/mucosa: Leishmania cutánea (amastigotes intracelulares), Onchocerca</li>
+        <li>Biopsia hepática: esquistosomiasis (granulomas con huevos), toxoplasmosis</li>
+        <li>Aspirado de médula ósea: leishmaniasis visceral</li>
+        <li>Biopsia muscular: Trichinella (larvas encapsuladas)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="subsection"><h3>Interpretación del hemograma en parasitosis</h3></div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Hallazgo</th><th>Valor orientativo</th><th>Parasitosis asociada</th></tr></thead>
+      <tbody>
+        <tr><td>Eosinofilia leve</td><td>500–1500 cél/µL</td><td>Infecciones intestinales (oxiuros, Giardia, Entamoeba)</td></tr>
+        <tr><td>Eosinofilia moderada</td><td>1500–5000 cél/µL</td><td>Ascariasis, uncinariasis, esquistosomiasis crónica</td></tr>
+        <tr><td>Eosinofilia grave (hipereosinofilia)</td><td>&gt;5000 cél/µL</td><td>Larva migrans visceral, triquinosis, filariasis en fase activa, síndrome de Löffler</td></tr>
+        <tr><td>Anemia normocítica normocrómica</td><td>Hb &lt;10 g/dL</td><td>Malaria hemolítica, leishmaniasis visceral</td></tr>
+        <tr><td>Anemia microcítica hipocrómica</td><td>Ferritina baja</td><td>Anquilostomiasis crónica (pérdida de hierro)</td></tr>
+        <tr><td>Anemia megaloblástica</td><td>VCM &gt;100 fL, B12 baja</td><td>Diphyllobothrium (compite por vitamina B12)</td></tr>
+        <tr><td>Pancitopenia + esplenomegalia</td><td>—</td><td>Leishmaniasis visceral, malaria crónica (síndrome de esplenomegalia tropical)</td></tr>
+        <tr><td>Trombocitopenia</td><td>Plaquetas &lt;150.000</td><td>Malaria, enfermedad de Chagas aguda, babesiosis</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════════════════ 10. FARMACOLOGÍA ═══════════════════ -->
+<section id="farma">
+  <div class="section-header">
+    <div class="icon">💊</div>
+    <div><h2>Farmacología Antiparasitaria</h2><p>Mecanismos de acción, indicaciones y efectos adversos</p></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="pharma-card">
+      <div class="ph">💊 Metronidazol (y Tinidazol)</div>
+      <div class="pb">
+        <p><strong>Mecanismo:</strong> El grupo nitro se reduce en organismos anaerobios/microaerófilos generando radicales libres que dañan el DNA.</p>
+        <p><strong>Indicaciones:</strong> Amebiasis, giardiasis, tricomonosis, balantidiasis. También antibacteriano (Bacteroides, H. pylori).</p>
+        <p><strong>Efectos adversos:</strong> náuseas, gusto metálico, efecto antabús (no tomar alcohol), neurotoxicidad con dosis altas.</p>
+        <div class="meta"><span class="tag tg">Protozoos anaerobios</span><span class="tag ty">Interacción con alcohol</span></div>
+      </div>
+    </div>
+    <div class="pharma-card">
+      <div class="ph">💊 Albendazol / Mebendazol (Benzimidazoles)</div>
+      <div class="pb">
+        <p><strong>Mecanismo:</strong> Se unen a la β-tubulina del parásito inhibiendo la polimerización de microtúbulos → alteración del esqueleto celular, absorción de glucosa y reproducción.</p>
+        <p><strong>Indicaciones:</strong> Amplio espectro antihelmíntico: ascariasis, oxiuriasis, tricuriasis, uncinariasis, hidatidosis, neurocisticercosis, strongyloides, toxocariasis.</p>
+        <p><strong>Efectos adversos:</strong> GI leves; con dosis prolongadas: toxicidad hepática, supresión medular. Teratogénico: evitar en embarazo.</p>
+        <div class="meta"><span class="tag tb">Nematodos</span><span class="tag tb">Céstodos (Echinococcus)</span></div>
+      </div>
+    </div>
+    <div class="pharma-card">
+      <div class="ph">💊 Praziquantel</div>
+      <div class="pb">
+        <p><strong>Mecanismo:</strong> Aumenta permeabilidad de membrana del parásito al calcio → contracción muscular espástica, vacuolización del tegumento → muerte.</p>
+        <p><strong>Indicaciones:</strong> Esquistosomiasis (droga de elección), teniasis intestinal, cisticercosis, tremátodos hepáticos y pulmonares (Fasciola es resistente; usar triclabendazol).</p>
+        <p><strong>Efectos adversos:</strong> dolor abdominal, náuseas, cefalea; en neurocisticercosis puede exacerbar la inflamación (usar con corticoides).</p>
+        <div class="meta"><span class="tag tb">Tremátodos</span><span class="tag tb">Céstodos</span></div>
+      </div>
+    </div>
+    <div class="pharma-card">
+      <div class="ph">💊 Ivermectina</div>
+      <div class="pb">
+        <p><strong>Mecanismo:</strong> Potencia canales de cloro dependientes de glutamato (GluCl) exclusivos de invertebrados → hiperpolarización → parálisis y muerte del parásito.</p>
+        <p><strong>Indicaciones:</strong> Oncocercosis, filariasis linfática (con DEC), strongyloides, escabiosis (sarna noruega), pediculosis resistente, larva migrans cutánea.</p>
+        <p><strong>Efectos adversos:</strong> Reacción de Mazzotti (fiebre, prurito, taquicardia) por muerte masiva de microfilarias. Contraindicado en zona endémica de Loa loa con alta microfilaremia.</p>
+        <div class="meta"><span class="tag tg">Nematodos</span><span class="tag to">Ectoparásitos</span></div>
+      </div>
+    </div>
+    <div class="pharma-card">
+      <div class="ph">💊 Artemisininas (Artemeter, Artesunato)</div>
+      <div class="pb">
+        <p><strong>Mecanismo:</strong> El puente endoperóxido interactúa con el hierro del hem parasitario → radicales libres que dañan proteínas del parásito. Acción rápida.</p>
+        <p><strong>Indicaciones:</strong> Malaria grave por P. falciparum (artesunato IV es el estándar de oro). Se usa siempre en combinación (ACT: artemeter + lumefantrina, artesunato + amodiaquina).</p>
+        <p><strong>Efectos adversos:</strong> Generalmente bien tolerado; anemia hemolítica tardía en malaria grave tratada con artesunato IV.</p>
+        <div class="meta"><span class="tag tr">Plasmodium falciparum</span><span class="tag ty">Siempre en combinación</span></div>
+      </div>
+    </div>
+    <div class="pharma-card">
+      <div class="ph">💊 Anfotericina B liposomal</div>
+      <div class="pb">
+        <p><strong>Mecanismo:</strong> Se une al ergosterol de la membrana del parásito (y hongos) → poros → lisis celular. La forma liposomal reduce la nefrotoxicidad.</p>
+        <p><strong>Indicaciones:</strong> Leishmaniasis visceral (kala-azar): primera línea en muchas regiones; también como segunda línea en otras formas de leishmaniasis. Mucormicosis, aspergilosis.</p>
+        <p><strong>Efectos adversos:</strong> Nefrotoxicidad, hipopotasemia, fiebre/escalofríos durante infusión (forma convencional), hepatotoxicidad.</p>
+        <div class="meta"><span class="tag tp">Leishmania</span></div>
+      </div>
+    </div>
+    <div class="pharma-card">
+      <div class="ph">💊 Benznidazol / Nifurtimox</div>
+      <div class="pb">
+        <p><strong>Mecanismo:</strong> Generación de metabolitos reactivos nitrosos y de oxígeno que dañan el DNA y proteínas de T. cruzi. Benznidazol es nitroimidazol; Nifurtimox es nitrofurano.</p>
+        <p><strong>Indicaciones:</strong> Enfermedad de Chagas: muy eficaces en fase aguda (curación 80–90%); en fase crónica reducen progresión pero no curan la cardiomiopatía establecida.</p>
+        <p><strong>Efectos adversos:</strong> Benznidazol: dermatitis, neuropatía periférica. Nifurtimox: náuseas, anorexia, psicosis (con dosis altas).</p>
+        <div class="meta"><span class="tag tr">T. cruzi</span><span class="tag tg">Más eficaz en fase aguda</span></div>
+      </div>
+    </div>
+    <div class="pharma-card">
+      <div class="ph">💊 Pirimetamina + Sulfadiazina</div>
+      <div class="pb">
+        <p><strong>Mecanismo:</strong> Bloqueo secuencial de la síntesis de folatos del parásito: sulfadiazina inhibe dihidropteroato sintasa; pirimetamina inhibe dihidrofolato reductasa.</p>
+        <p><strong>Indicaciones:</strong> Toxoplasmosis (especialmente cerebral en VIH); toxoplasmosis congénita. Siempre con ácido folínico para proteger la médula ósea del paciente.</p>
+        <p><strong>Efectos adversos:</strong> Supresión medular (leucopenia, trombocitopenia), rush cutáneo, Stevens-Johnson (sulfa).</p>
+        <div class="meta"><span class="tag tp">Toxoplasma gondii</span><span class="tag ty">+ Ácido folínico obligatorio</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="study-box">
+    <h4>📌 Claves de estudio — Fármacos</h4>
+    <ul>
+      <li>Praziquantel = esquistosomiasis + tenias. <em>Fasciola</em> es RESISTENTE → usar triclabendazol.</li>
+      <li>Albendazol = amplio espectro nematodos. También para Echinococcus (junto a cirugía/PAIR).</li>
+      <li>Ivermectina = oncocercosis, filarias, sarna, strongyloides. Nunca en zonas con Loa loa con alta carga.</li>
+      <li>Malaria grave = artesunato IV (NO quinina como primera línea). Malaria no complicada = ACT oral.</li>
+      <li>Metronidazol + paromomicina para amebiasis: metro mata el trofozoíto en tejidos, paromomicina elimina quistes en lumen intestinal.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══════════════════ 11. PREVENCIÓN ═══════════════════ -->
+<section id="prevencion">
+  <div class="section-header">
+    <div class="icon">🛡️</div>
+    <div><h2>Prevención y Control</h2><p>Estrategias individuales, comunitarias y de salud pública</p></div>
+  </div>
+
+  <div class="grid-4">
+    <div class="prev-item"><div class="ico">🚿</div><h4>Higiene personal</h4><p>Lavado de manos con agua y jabón antes de comer, al salir del baño y tras el contacto con animales.</p></div>
+    <div class="prev-item"><div class="ico">💧</div><h4>Agua segura</h4><p>Consumir agua potable, hervida o filtrada. Evitar agua no tratada de ríos o pozos en zonas endémicas.</p></div>
+    <div class="prev-item"><div class="ico">🥩</div><h4>Cocción adecuada</h4><p>Cocinar carne a 70°C interno. Congelar pescado a −20°C (48h) para destruir larvas de Diphyllobothrium y Anisakis.</p></div>
+    <div class="prev-item"><div class="ico">🥬</div><h4>Frutas y verduras</h4><p>Lavar con agua potable, desinfectar con solución clorada o yodada. Pelar frutas en zonas de riesgo.</p></div>
+    <div class="prev-item"><div class="ico">🦟</div><h4>Control de vectores</h4><p>Mosquiteros impregnados con permetrina (LLIN), repelentes (DEET, picaridina), fumigaciones, eliminación de criaderos.</p></div>
+    <div class="prev-item"><div class="ico">🐾</div><h4>Salud animal</h4><p>Desparasitar perros y gatos (antihelmínticos 2–4 veces/año). No permitir que defequen en áreas de juego infantil.</p></div>
+    <div class="prev-item"><div class="ico">🏘️</div><h4>Saneamiento</h4><p>Construcción de letrinas y alcantarillado. La contaminación fecal del suelo y agua es la principal fuente de infección por geohelmintos.</p></div>
+    <div class="prev-item"><div class="ico">💊</div><h4>Tratamiento preventivo masivo (TPM)</h4><p>OMS recomienda administración masiva de albendazol/mebendazol (geohelmintos), ivermectina (oncocercosis/filariasis) e ivermectina + albendazol (filariasis linfática) en comunidades endémicas.</p></div>
+    <div class="prev-item"><div class="ico">🩺</div><h4>Quimioprofilaxis</h4><p>Cloroquina o atovacuona-proguanil para viajeros a zonas de malaria. Cotrimoxazol profiláctico en VIH para toxoplasmosis cerebral (CD4 &lt;100).</p></div>
+    <div class="prev-item"><div class="ico">🤰</div><h4>Embarazo</h4><p>Screening de toxoplasmosis, Chagas en zonas endémicas, prueba de VIH. Evitar limpiar cajas de gato. No comer carne cruda ni embutidos no pasteurizados.</p></div>
+    <div class="prev-item"><div class="ico">🌍</div><h4>Viajeros internacionales</h4><p>Consulta pre-viaje: vacunas, quimioprofilaxis antipalúdica, repelentes, calzado cerrado. Evitar nadar en agua dulce en África (Schistosoma).</p></div>
+    <div class="prev-item"><div class="ico">📚</div><h4>Educación sanitaria</h4><p>Programas escolares sobre lavado de manos, uso de calzado en suelos contaminados, reconocimiento de síntomas y acceso a diagnóstico.</p></div>
+  </div>
+
+  <div class="subsection"><h3>Programas internacionales de control</h3></div>
+  <div class="timeline">
+    <div class="tl-item">
+      <h4>Programa GPELF — Filariasis linfática</h4>
+      <p>Programa Global de Eliminación de la Filariasis Linfática (OMS). Administración masiva anual de DEC + albendazol o ivermectina + albendazol. Meta: eliminación como problema de salud pública para 2030. Ha tratado a más de 8.500 millones de personas desde el año 2000.</p>
+    </div>
+    <div class="tl-item">
+      <h4>ESPEN — Enfermedades tropicales desatendidas</h4>
+      <p>Plataforma de la OPS/OMS para la planificación, coordinación y supervisión del control de ETD en África. Distribuye antihelmínticos (albendazol donado por GSK, mebendazol por J&J) para el TPM escolar.</p>
+    </div>
+    <div class="tl-item">
+      <h4>Iniciativa Onchocerciasis (APOC / OEPA)</h4>
+      <p>Tratamiento comunitario dirigido con ivermectina (CDTI). Ha reducido la ceguera por oncocercosis más del 97% en el Programa de Control de Oncocercosis de África Occidental.</p>
+    </div>
+    <div class="tl-item">
+      <h4>RBM — Roll Back Malaria</h4>
+      <p>Alianza global para reducir la carga de malaria. Distribución de mosquiteros impregnados (LLIN), rociado intradomiciliar residual (IRS), diagnóstico rápido y terapia combinada con artemisininas (ACT). Mortalidad reducida en &gt;60% desde 2000.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 12. GLOSARIO ═══════════════════ -->
+<section id="glosario">
+  <div class="section-header">
+    <div class="icon">📖</div>
+    <div><h2>Glosario de Términos</h2><p>Vocabulario esencial para el estudio de parasitología</p></div>
+  </div>
+
+  <div class="grid-2">
     <dl>
-      <div class="glossary-item">
-        <dt>Endoparásito</dt>
-        <dd>Parásito que vive dentro del cuerpo del hospedador (intestinos, tejidos, sangre).</dd>
-      </div>
-      <div class="glossary-item">
-        <dt>Ectoparásito</dt>
-        <dd>Parásito que vive sobre la superficie corporal del hospedador (piel, pelo, plumas).</dd>
-      </div>
-      <div class="glossary-item">
-        <dt>Quiste</dt>
-        <dd>Forma resistente de un parásito rodeada por una pared protectora; suele ser la forma infectante o de resistencia ambiental.</dd>
-      </div>
-      <div class="glossary-item">
-        <dt>Trofozoíto</dt>
-        <dd>Forma vegetativa activa de un protozoo; es la forma que se alimenta y se reproduce, generalmente no resistente al ambiente externo.</dd>
-      </div>
-      <div class="glossary-item">
-        <dt>Cercaría</dt>
-        <dd>Larva infectante de los tremátodos (como Schistosoma) que nada libremente en el agua y penetra activamente la piel del hospedador definitivo.</dd>
-      </div>
-      <div class="glossary-item">
-        <dt>Proglótido</dt>
-        <dd>Segmento del cuerpo de un céstodo (tenia) que contiene los órganos reproductores y puede desprenderse lleno de huevos.</dd>
-      </div>
-      <div class="glossary-item">
-        <dt>Microfilaría</dt>
-        <dd>Larva de primer estadio de los filáridos; circula en sangre o se aloja en piel y es tomada por el vector para continuar el ciclo.</dd>
-      </div>
-      <div class="glossary-item">
-        <dt>Ooquiste</dt>
-        <dd>Forma esporulada y resistente de los coccidios (Toxoplasma, Cryptosporidium, Cyclospora); es la forma de transmisión fecal-ambiental.</dd>
-      </div>
-      <div class="glossary-item">
-        <dt>Palúdico / Palúdea</dt>
-        <dd>Relativo al paludismo (malaria). Adjetivo que describe síntomas, pacientes o zonas endémicas de malaria.</dd>
-      </div>
-      <div class="glossary-item">
-        <dt>Helminto</dt>
-        <dd>Gusano parásito multicelular. Incluye nematodos (gusanos redondos), tremátodos (duelas) y céstodos (tenias).</dd>
-      </div>
-      <div class="glossary-item">
-        <dt>Amastigote</dt>
-        <dd>Forma intracelular y sin flagelo de Leishmania y Trypanosoma cruzi que se multiplica en los macrófagos del hospedador mamífero.</dd>
-      </div>
-      <div class="glossary-item">
-        <dt>Schizontes / Esquizogonia</dt>
-        <dd>Fase de reproducción asexual de Plasmodium en la que el parásito se divide múltiples veces dentro de una célula hospedera antes de liberarse.</dd>
-      </div>
+      <div class="gi"><dt>Trofozoíto</dt><dd>Forma vegetativa activa de un protozoo; se alimenta y multiplica. No resiste el ambiente externo. <em>Ejemplo: trofozoíto de Entamoeba en tejido colónico.</em></dd></div>
+      <div class="gi"><dt>Quiste</dt><dd>Forma de resistencia de un protozoo envuelta en pared protectora; es la forma infectante habitual en transmisión fecal-oral. <em>Ejemplo: quistes de Giardia en agua.</em></dd></div>
+      <div class="gi"><dt>Ooquiste</dt><dd>Forma esporulada y resistente de coccidios (Toxoplasma, Cryptosporidium, Cyclospora, Isospora). Se elimina en heces y sporula en el ambiente.</dd></div>
+      <div class="gi"><dt>Esporozoíto</dt><dd>Forma infectante de Apicomplexa producida en el ooquiste o en la glándula salival del mosquito. Inoculado al hospedador vertebrado.</dd></div>
+      <div class="gi"><dt>Merozoíto</dt><dd>Estadio que resulta de la esquizogonia; invade eritrocitos en la malaria. Corresponde a la reproducción asexual del Plasmodium.</dd></div>
+      <div class="gi"><dt>Gametocito</dt><dd>Forma sexual de Plasmodium que circula en sangre periférica y es ingerida por el mosquito para continuar el ciclo sexual (esporogonia).</dd></div>
+      <div class="gi"><dt>Hipnozoíto</dt><dd>Forma latente hepática de P. vivax y P. ovale responsable de las recaídas. Puede reactivarse meses o años después de la infección primaria. Tratar con primaquina.</dd></div>
+      <div class="gi"><dt>Amastigote</dt><dd>Forma redondeada intracelular sin flagelo libre de Leishmania y T. cruzi. Se multiplica en macrófagos (Leishmania) o células musculares (T. cruzi).</dd></div>
+      <div class="gi"><dt>Tripomastigote</dt><dd>Forma flagelada en sangre de Trypanosoma; es la forma diagnóstica en frotis/gota gruesa. No se divide en sangre.</dd></div>
+      <div class="gi"><dt>Promastigote</dt><dd>Forma flagelada alargada de Leishmania en el vector (flebotomo) y en cultivo. Es la forma infectante inoculada por el insecto.</dd></div>
     </dl>
-  </section>
+    <dl>
+      <div class="gi"><dt>Proglótido</dt><dd>Segmento del estróbilo de un céstodo que contiene órganos reproductores. Los proglótidos grávidos llenos de huevos se desprenden y se eliminan en heces.</dd></div>
+      <div class="gi"><dt>Escólex</dt><dd>Cabeza de la tenia con órganos de fijación (ganchos y ventosas). Se fija a la mucosa intestinal del hospedador definitivo.</dd></div>
+      <div class="gi"><dt>Cisticerco</dt><dd>Larva de Taenia solium enquistada en tejidos del hospedador intermediario. En SNC humano produce neurocisticercosis.</dd></div>
+      <div class="gi"><dt>Cercaría</dt><dd>Larva nadadora de tremátodos; forma infectante que penetra activamente la piel del hospedador definitivo. Ejemplo: cercaria de Schistosoma en agua dulce.</dd></div>
+      <div class="gi"><dt>Miracidio</dt><dd>Larva ciliada de primera etapa de los tremátodos; penetra en el caracol hospedador intermediario. Se libera de los huevos en agua dulce.</dd></div>
+      <div class="gi"><dt>Microfilaria</dt><dd>Larva de primer estadio de filáridos; circula en sangre (o piel) y es tomada por el vector artrópodo para continuar el desarrollo.</dd></div>
+      <div class="gi"><dt>Oncocercoma</dt><dd>Nódulo subcutáneo fibroso que contiene gusanos adultos de Onchocerca volvulus. Palpaple, indoloro, sobre prominencias óseas.</dd></div>
+      <div class="gi"><dt>Quiste hidatídico</dt><dd>Larva de Echinococcus granulosus formada por tres capas: periquiste (hospedador), membrana laminar y membrana germinal. Puede contener miles de escólices.</dd></div>
+      <div class="gi"><dt>Síndrome de Löffler</dt><dd>Neumonitis eosinofílica transitoria producida por la migración pulmonar de larvas de Ascaris, Ancylostoma o Strongyloides. Fiebre, tos, eosinofilia, infiltrados pulmonares.</dd></div>
+      <div class="gi"><dt>Larva currens</dt><dd>Migración cutánea serpiginosa y rápida de larvas de Strongyloides stercoralis a lo largo del tronco o glúteos. Característica de la estrongiloidiasis crónica.</dd></div>
+    </dl>
+  </div>
+</section>
 
 </main>
 
 <footer>
-  <p><strong>Parasitología</strong> — Información educativa para estudiantes y profesionales de la salud.</p>
-  <p style="margin-top:0.5rem; opacity:0.6; font-size:0.8rem;">Contenido basado en referencias de la OMS, OPS y literatura médica actualizada. No reemplaza la consulta médica profesional.</p>
+  <p><strong>Parasitología — Guía de Estudio Completa</strong></p>
+  <p style="margin-top:.5rem; opacity:.7; font-size:.8rem">Basada en criterios de la OMS, OPS y libros de texto de referencia (Murray, Mandell, Botero-Restrepo). Material educativo — no reemplaza la consulta médica ni los apuntes de cátedra.</p>
+  <p style="margin-top:.4rem; opacity:.5; font-size:.75rem">Actualizado 2026 · Uso educativo exclusivo</p>
 </footer>
 
 </body>
